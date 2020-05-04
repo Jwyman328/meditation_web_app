@@ -1,0 +1,12 @@
+.link-text {
+    font-size: larger;
+    font-weight: 600;
+    color:green;
+    transition: all .3s;
+
+    &:hover{
+        transform: scale(1.1);
+        color: grey
+        //box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.646);
+    }
+}
