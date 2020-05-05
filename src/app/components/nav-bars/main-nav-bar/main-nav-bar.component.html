@@ -1,7 +1,7 @@
 <nav class="nav-container">
     <div class="nav-list">
-        <app-nav-link [linkName]='"Home"'></app-nav-link>
-        <app-nav-link [linkName]='"Meditations"'></app-nav-link>
+        <app-nav-link [routeUrl]='"/"' [linkName]='"Home"'></app-nav-link>
+        <app-nav-link [routeUrl]="'all-meditations'" [linkName]='"Meditations"'></app-nav-link>
         <app-nav-link [linkName]='"Fitness"'></app-nav-link>
         <app-nav-link [linkName]='"Logout"'></app-nav-link>
     </div>

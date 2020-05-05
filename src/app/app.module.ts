@@ -16,6 +16,8 @@ import { FormButtonComponent } from './components/buttons/form-button/form-butto
 import { LoginInPageComponent } from './pages/login-in-page/login-in-page.component';
 import { LoginFormComponent } from './components/forms/login-form/login-form.component';
 import { NavigateToPageButtonComponent } from './components/buttons/navigate-to-page-button/navigate-to-page-button.component';
+import { SelectMeditationCoursePageComponent } from './pages/select-meditation-course-page/select-meditation-course-page.component';
+import { MeditationCourseCardComponent } from './components/meditation-course-card/meditation-course-card.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { NavigateToPageButtonComponent } from './components/buttons/navigate-to-
     LoginInPageComponent,
     LoginFormComponent,
     NavigateToPageButtonComponent,
+    SelectMeditationCoursePageComponent,
+    MeditationCourseCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
