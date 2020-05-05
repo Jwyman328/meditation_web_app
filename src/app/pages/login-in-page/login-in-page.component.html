@@ -1,0 +1,11 @@
+<div class="page-container">
+  <app-background-image [url]="backgroundImageUrl"></app-background-image>
+  <app-auth-card>
+    <app-page-header [headerText]="'Meditation Login'"></app-page-header>
+    <app-login-form></app-login-form>
+    <app-navigate-to-page-button
+      [route]="'signup'"
+      [navigatePageText]="'signup page'"
+    ></app-navigate-to-page-button>
+  </app-auth-card>
+</div>

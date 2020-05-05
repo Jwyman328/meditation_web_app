@@ -13,6 +13,9 @@ import { AuthCardComponent } from './components/auth-card/auth-card.component';
 import { SignupFormComponent } from './components/forms/signup-form/signup-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormButtonComponent } from './components/buttons/form-button/form-button.component';
+import { LoginInPageComponent } from './pages/login-in-page/login-in-page.component';
+import { LoginFormComponent } from './components/forms/login-form/login-form.component';
+import { NavigateToPageButtonComponent } from './components/buttons/navigate-to-page-button/navigate-to-page-button.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { FormButtonComponent } from './components/buttons/form-button/form-butto
     AuthCardComponent,
     SignupFormComponent,
     FormButtonComponent,
+    LoginInPageComponent,
+    LoginFormComponent,
+    NavigateToPageButtonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

@@ -1,0 +1,18 @@
+<form class="auth-form" [formGroup]="loginForm">
+  <input
+    class="auth-form-input"
+    placeholder="email"
+    type="text"
+    formControlName="email"
+  />
+  <input
+    class="auth-form-input"
+    placeholder="password"
+    type="password"
+    formControlName="password"
+  />
+  <app-form-button [handleSubmit]="handleLoginSubmit"></app-form-button>
+  <p *ngIf="loginForm.invalid && loginForm.touched" class="error-msg">
+    Username or password is invalid
+  </p>
+</form>

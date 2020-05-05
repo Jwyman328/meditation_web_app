@@ -3,5 +3,9 @@
     <app-auth-card>
         <app-page-header [headerText]='"Meditation Signup"'></app-page-header>
         <app-signup-form></app-signup-form>
+        <app-navigate-to-page-button
+        [route]="'login'"
+        [navigatePageText]="'login page'"
+      ></app-navigate-to-page-button>
     </app-auth-card>
-</div>>
+</div>

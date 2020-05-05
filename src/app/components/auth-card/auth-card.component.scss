@@ -1,6 +1,8 @@
 .auth-card-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: start;
     width: 70vw;
     height: 60vh;
     background: linear-gradient(to bottom, #373B44,#4286f4 );
