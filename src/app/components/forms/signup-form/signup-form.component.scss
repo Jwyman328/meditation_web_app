@@ -7,3 +7,18 @@
     position: relative;
     width: 90%;
 }
+
+.auth-form-input {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    height: 35%;
+    font-size: 20px;
+    margin-top: 2vh;
+}
+
+.error-msg {
+    font-size: larger;
+    color: black;
+    font-weight: 600;
+}

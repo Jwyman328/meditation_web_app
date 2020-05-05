@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthFormInputComponent } from './auth-form-input.component';
+import { FormButtonComponent } from './form-button.component';
 
-describe('AuthFormInputComponent', () => {
-  let component: AuthFormInputComponent;
-  let fixture: ComponentFixture<AuthFormInputComponent>;
+describe('FormButtonComponent', () => {
+  let component: FormButtonComponent;
+  let fixture: ComponentFixture<FormButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthFormInputComponent ]
+      declarations: [ FormButtonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AuthFormInputComponent);
+    fixture = TestBed.createComponent(FormButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

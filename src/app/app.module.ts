@@ -11,7 +11,8 @@ import { NavLinkComponent } from './components/nav-bars/nav-link/nav-link.compon
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { AuthCardComponent } from './components/auth-card/auth-card.component';
 import { SignupFormComponent } from './components/forms/signup-form/signup-form.component';
-import { AuthFormInputComponent } from './components/forms/inputs/auth-form-input/auth-form-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormButtonComponent } from './components/buttons/form-button/form-button.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,10 @@ import { AuthFormInputComponent } from './components/forms/inputs/auth-form-inpu
     SignUpPageComponent,
     AuthCardComponent,
     SignupFormComponent,
-    AuthFormInputComponent
+    FormButtonComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

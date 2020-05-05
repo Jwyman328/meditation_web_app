@@ -1,7 +1,49 @@
-<form class='auth-form'>
-    <app-auth-form-input [type]="'text'" [placeHolder]='"First Name"' ></app-auth-form-input>
-    <app-auth-form-input [type]="'text'" [placeHolder]='"Last Name"' ></app-auth-form-input>
-    <app-auth-form-input [type]="'email'" [placeHolder]='"Email"' ></app-auth-form-input>
-    <app-auth-form-input [type]="'password'" [placeHolder]='"Password"' ></app-auth-form-input>
-    <app-auth-form-input [type]="'password'" [placeHolder]='"Repeat Password"' ></app-auth-form-input>
+<form [formGroup]="signUpForm" class="auth-form">
+  <input
+    formControlName="firstName"
+    class="auth-form-input"
+    placeholder="First Name"
+  />
+  <input
+    formControlName="lastName"
+    class="auth-form-input"
+    placeholder="Last Name"
+  />
+  <input formControlName="email" class="auth-form-input" placeholder="Email" />
+  <input
+    formControlName="password"
+    class="auth-form-input"
+    placeholder="Password"
+    type="password"
+  />
+  <input
+    formControlName="repeatPassword"
+    class="auth-form-input"
+    placeholder="Repeat Password"
+    type="password"
+  />
+  <div>
+    <p class="error-msg" *ngIf="signUpForm.invalid && signUpForm.touched">
+      Form is currently invalid
+    </p>
+    <p
+      class="error-msg"
+      *ngIf="
+        signUpForm.get('password').invalid && signUpForm.get('password').touched
+      "
+    >
+      password must be greater than 7 characters
+    </p>
+    <p
+      class="error-msg"
+      *ngIf="signUpForm.get('email').invalid && signUpForm.get('email').touched"
+    >
+      Please Input a valid email
+    </p>
+  </div>
+
+<!--   <button type="submit" (click)="onSubmitForm()">
+    submit
+  </button> -->
+  <app-form-button [handleSubmit]='onSubmitForm'></app-form-button>
 </form>
