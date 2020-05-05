@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-meditation-course-card',
@@ -8,9 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MeditationCourseCardComponent implements OnInit {
   @Input('courseTitleText') courseTitleText:string;
   @Input('imageUrl') imageUrl:string;
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
+  }
+
+  /**
+   * Navigate to the course cards individual course page.
+   */
+  navigateToCourse = () => {
+    this.route.navigate([`individual-meditation-course`,`${this.courseTitleText}`])
   }
 
 }
