@@ -8,6 +8,10 @@ import { BackgroundImageComponent } from './components/background-image/backgrou
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { MainNavBarComponent } from './components/nav-bars/main-nav-bar/main-nav-bar.component';
 import { NavLinkComponent } from './components/nav-bars/nav-link/nav-link.component';
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
+import { AuthCardComponent } from './components/auth-card/auth-card.component';
+import { SignupFormComponent } from './components/forms/signup-form/signup-form.component';
+import { AuthFormInputComponent } from './components/forms/inputs/auth-form-input/auth-form-input.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { NavLinkComponent } from './components/nav-bars/nav-link/nav-link.compon
     BackgroundImageComponent,
     PageHeaderComponent,
     MainNavBarComponent,
-    NavLinkComponent
+    NavLinkComponent,
+    SignUpPageComponent,
+    AuthCardComponent,
+    SignupFormComponent,
+    AuthFormInputComponent
   ],
   imports: [
     BrowserModule,
