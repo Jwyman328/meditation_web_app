@@ -22,6 +22,7 @@ import { IndividualMeditationCoursePageComponent } from './pages/individual-medi
 import { IndividualMeditationPageComponent } from './pages/individual-meditation-page/individual-meditation-page.component';
 import { IndividualMeditationClickableRowComponent } from './components/individual-meditation-clickable-row/individual-meditation-clickable-row.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     IndividualMeditationCoursePageComponent,
     IndividualMeditationPageComponent,
     IndividualMeditationClickableRowComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,4 @@
     Username and password are not registered
   </p>
 </form>
-
-<div class='is-loading' *ngIf='loginUser.isLoading'>
-  <p>...loading</p> 
- </div>
+ <app-spinner [isSpinning]='loginUser.isLoading'></app-spinner>

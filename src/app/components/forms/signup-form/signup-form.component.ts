@@ -8,6 +8,8 @@ import {
 import { passwordValidator } from '../../../custom-validators/password-validator';
 import { Router } from '@angular/router';
 import { isPasswordAndRepeatPasswordAreEqual } from '../../../custom-validators/password-repeatPassword-equal-validator';
+import { SignupUserService } from '../../../services/http-requests/signup-user.service';
+import { getSignUpFormData } from '../login-form/helperFunctions/getSignUpFormData';
 
 @Component({
   selector: 'app-signup-form',
@@ -23,7 +25,7 @@ export class SignupFormComponent implements OnInit {
     repeatPassword: new FormControl(''),
   });
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public signupUser:SignupUserService) {}
 
   ngOnInit(): void {}
 
@@ -44,14 +46,28 @@ export class SignupFormComponent implements OnInit {
       )
     ){
       if (this.signUpForm.valid) {
-        this.router.navigate(['/']);
-        this.signUpForm.reset();
+        let signUpPostData = getSignUpFormData(this.signUpForm);
+        let signUpAttempt =  this.signupUser.postSignUpUser(signUpPostData);
+        signUpAttempt.subscribe((userToken) => {
+            if (userToken){
+              this.signupUser.handleSignUpRequestSuccess()
+              this.signUpForm.reset();
+              this.router.navigate(['/']);
+            }else{
+              this.signupUser.handleSignUpRequestError()
+            }
+        }, (error)=>{
+          this.signupUser.handleSignUpRequestError()
+        })
+       
       } else {
         console.log('invalid');
       }
     }else{
       // set error if parrwos fo not equal
       this.signUpForm.setErrors({passwordsEqual:true})
+      this.signupUser.handleSignUpRequestError()
+
     }
     
   };

@@ -4,9 +4,9 @@ import { FormGroup } from '@angular/forms';
  * @param loginForm Login Form
  */
 export function getLoginFormData(loginForm: FormGroup) {
-  let loginPostData = JSON.stringify({
+  let loginPostData = {
     username: loginForm.get('email').value,
     password: loginForm.get('password').value,
-  });
+  };
   return loginPostData;
 }
