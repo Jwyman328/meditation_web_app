@@ -10,6 +10,8 @@
     animation-timing-function: linear;
     position: relative;
 
+    box-shadow: 5px -5px 5px black;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +26,7 @@
     }
     50% {
         transform: rotate(180deg);
+
 
     }
     100% {

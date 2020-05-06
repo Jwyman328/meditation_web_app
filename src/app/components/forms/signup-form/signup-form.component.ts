@@ -29,9 +29,6 @@ export class SignupFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  ngOnChanges() {
-    console.log(this.signUpForm);
-  }
 
   /**
    * Reset form if valid. and Route to Homepage
@@ -64,7 +61,7 @@ export class SignupFormComponent implements OnInit {
         console.log('invalid');
       }
     }else{
-      // set error if parrwos fo not equal
+      // set error if passwords are not equal
       this.signUpForm.setErrors({passwordsEqual:true})
       this.signupUser.handleSignUpRequestError()
 

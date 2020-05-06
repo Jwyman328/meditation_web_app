@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginInPageComponent },
   {path:'all-meditations', component: SelectMeditationCoursePageComponent},
   {path: 'individual-meditation-course/:courseId', component: IndividualMeditationCoursePageComponent},
-  {path: 'individual-meditation-page/:courseId', component: IndividualMeditationPageComponent},
+  {path: 'individual-meditation-page/:courseId/:meditationTitle', component: IndividualMeditationPageComponent},
 
 ];
 

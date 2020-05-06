@@ -1,6 +1,6 @@
 <div class='page-container' >
-    <app-page-header [headerText]="'meditation header'"></app-page-header>
-    <app-background-image [url]="'https://images.pexels.com/photos/457881/pexels-photo-457881.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'"></app-background-image>
+    <app-page-header [headerText]="meditationTitle"></app-page-header>
+    <app-background-image [url]="meditationPhotoUrl"></app-background-image>
 
     <div class='big-circle-breath'>
         <p class='breath-text'>
@@ -8,6 +8,6 @@
         </p>
     </div>
     <audio controls   class='audioPlayer' #audioElement>
-        <source type="audio/mpeg" src="https://ia601209.us.archive.org/17/items/afterguardunfit/Ep68-Song-73.mp3"> 
+        <source type="audio/mpeg" [src]="meditationAudioUrl"> 
     </audio>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,9 +9,14 @@ import { Router } from '@angular/router';
 export class MeditationCourseCardComponent implements OnInit {
   @Input('courseTitleText') courseTitleText:string;
   @Input('imageUrl') imageUrl:string;
+  @Input('courseData') courseData:any; //individualCourseData;
   constructor(private route:Router) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
+    console.log(this.courseData, 'cd')
   }
 
   /**

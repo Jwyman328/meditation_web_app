@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
 export class IndividualMeditationClickableRowComponent implements OnInit {
   @Input('meditationNumber') meditationNumber:number;
   @Input('meditationTitleText') meditationTitleText:string;
+  @Input('meditationCourseTitle') meditationCourseTitle:string;
   constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
 
   navigateToMeditation = () => {
-    this.route.navigate(['individual-meditation-page',`${this.meditationTitleText}`])
+    this.route.navigate(['individual-meditation-page',`${this.meditationCourseTitle}`,`${this.meditationTitleText}`])
   }
 
 }
