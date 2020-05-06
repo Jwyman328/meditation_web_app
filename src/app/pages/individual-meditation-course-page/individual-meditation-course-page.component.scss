@@ -19,30 +19,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    position: relative;
+    height: 80%;
 }
 
-.individual-meditation-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 70vw;
-    height: 10vh;
-    background-color: rgba(255, 255, 255, 0.625);
-    border-radius: 200px;
-    overflow: hidden;
-    
-}
-
-.meditation-number-circle {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-style: solid;
-    border-color: black;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(to bottom, #667db6,#0082c8,);
-}

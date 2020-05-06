@@ -19,7 +19,8 @@ import { NavigateToPageButtonComponent } from './components/buttons/navigate-to-
 import { SelectMeditationCoursePageComponent } from './pages/select-meditation-course-page/select-meditation-course-page.component';
 import { MeditationCourseCardComponent } from './components/meditation-course-card/meditation-course-card.component';
 import { IndividualMeditationCoursePageComponent } from './pages/individual-meditation-course-page/individual-meditation-course-page.component';
-
+import { IndividualMeditationPageComponent } from './pages/individual-meditation-page/individual-meditation-page.component';
+import { IndividualMeditationClickableRowComponent } from './components/individual-meditation-clickable-row/individual-meditation-clickable-row.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,8 @@ import { IndividualMeditationCoursePageComponent } from './pages/individual-medi
     SelectMeditationCoursePageComponent,
     MeditationCourseCardComponent,
     IndividualMeditationCoursePageComponent,
+    IndividualMeditationPageComponent,
+    IndividualMeditationClickableRowComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
