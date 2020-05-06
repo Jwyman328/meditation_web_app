@@ -6,7 +6,20 @@
     justify-content: space-evenly;
     border-radius: 30px;
     overflow: hidden;
+    transition: all .3s;
+    box-shadow: 5px 5px 5px black;
+    margin-top: 10px;
 
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 6px 6px 6px black;
+
+    }
+
+    &:active {
+        transform: scale(.99);
+        box-shadow: 4px 4px 4px black;
+    }
 }
 
 .meditation-course-title {
