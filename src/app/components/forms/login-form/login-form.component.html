@@ -1,4 +1,4 @@
-<form class="auth-form" [formGroup]="loginForm">
+<form  *ngIf='!loginUser.isLoading' class="auth-form" [formGroup]="loginForm">
   <input
     class="auth-form-input"
     placeholder="email"
@@ -15,4 +15,11 @@
   <p *ngIf="loginForm.invalid && loginForm.touched" class="error-msg">
     Username or password is invalid
   </p>
+  <p class="error-msg" *ngIf='loginUser.isError'>
+    Username and password are not registered
+  </p>
 </form>
+
+<div class='is-loading' *ngIf='loginUser.isLoading'>
+  <p>...loading</p> 
+ </div>

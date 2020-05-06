@@ -21,6 +21,8 @@ import { MeditationCourseCardComponent } from './components/meditation-course-ca
 import { IndividualMeditationCoursePageComponent } from './pages/individual-meditation-course-page/individual-meditation-course-page.component';
 import { IndividualMeditationPageComponent } from './pages/individual-meditation-page/individual-meditation-page.component';
 import { IndividualMeditationClickableRowComponent } from './components/individual-meditation-clickable-row/individual-meditation-clickable-row.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,12 @@ import { IndividualMeditationClickableRowComponent } from './components/individu
     IndividualMeditationPageComponent,
     IndividualMeditationClickableRowComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
