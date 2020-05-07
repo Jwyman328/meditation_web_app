@@ -9,11 +9,7 @@ export class EmotionDataService {
   isError = false;
   isSuccess = false;
   isLoading = false;
-  pastMonthData:number[];
-  pastWeekData: number[];
-  today:string;
-  dateAWeekAgo: string;
-  dateAMonthAgo:string;
+ 
   constructor(private http:HttpClient) { }
 
   /**
@@ -26,19 +22,6 @@ export class EmotionDataService {
     {headers: new HttpHeaders({ Authorization: `JWT ${token}`,'Content-Type': 'application/json'})})
   }
 
-  setPastMonthEmotionData(pastMonthData){
-    
-    this.pastMonthData = this.createGraphDataFromRaw(pastMonthData);
-  }
-  setPastWeekEmotionData(pastWeekData){
-    this.pastWeekData = this.createGraphDataFromRaw(pastWeekData)
-  }
-
-  setDateValues(dateArray:string[]){
-    this.today = dateArray[0];
-    this.dateAWeekAgo= dateArray[1];
-    this.dateAMonthAgo = dateArray[2];
-  }
 
   handleGetRequestSent(){
     this.isLoading = true;
@@ -58,13 +41,5 @@ export class EmotionDataService {
     this.isLoading = false;
   }
 
-  createGraphDataFromRaw(rawDataArray){
-    let count = -1
-    let graphFormat = rawDataArray.map((moodPoint) => {
-      count = count + 1;
-      return {x:count,y:moodPoint, info:''}
-    })
-    console.log(graphFormat, 'md')
-    return graphFormat
-  }
+
 }

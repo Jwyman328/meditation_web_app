@@ -11,6 +11,7 @@ import { UserAuthDataService } from '../../services/userData/user-auth-data.serv
 import { emotionTextToNumberValue } from './helper_functions/returnNumberFromEmotionText';
 import { createTodaysFormatedDate } from './helper_functions/createTodaysFormatedDate';
 import { formatJournalPostData } from './helper_functions/formatJournalPostData';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mental-health',
@@ -27,7 +28,8 @@ export class MentalHealthComponent implements OnInit {
 
   constructor(
     public createJournalService: CreateJournalService,
-    private userAuthDataService: UserAuthDataService
+    private userAuthDataService: UserAuthDataService,
+    private route:Router
   ) {}
 
   ngOnInit(): void {}
@@ -59,6 +61,7 @@ export class MentalHealthComponent implements OnInit {
         this.createJournalService.handlePostSuccess();
         this.journalText = '';
         // route back to main journal page
+        this.route.navigate(['mental-health'])
       },
       (error) => {
         console.log(error);
