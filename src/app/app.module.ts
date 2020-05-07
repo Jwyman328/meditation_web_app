@@ -23,6 +23,10 @@ import { IndividualMeditationPageComponent } from './pages/individual-meditation
 import { IndividualMeditationClickableRowComponent } from './components/individual-meditation-clickable-row/individual-meditation-clickable-row.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { MentalHealthComponent } from './pages/mental-health/mental-health.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { ChooseEmotionComponent } from './pages/mental-health/local-components/choose-emotion/choose-emotion.component';
 
 @NgModule({
   declarations: [
@@ -45,12 +49,17 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     IndividualMeditationPageComponent,
     IndividualMeditationClickableRowComponent,
     SpinnerComponent,
+    MentalHealthComponent,
+    ChooseEmotionComponent,
+    
   ],
   imports: [
-    BrowserModule,
+BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
