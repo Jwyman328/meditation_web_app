@@ -24,6 +24,7 @@
     "angular-material": "^1.1.21",
     "ng-waveform": "^0.1.4",
     "ngx-audio-player": "^9.0.6",
+    "ngx-beautiful-charts": "^2.0.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

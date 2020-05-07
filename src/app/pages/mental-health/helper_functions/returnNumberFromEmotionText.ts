@@ -1,14 +1,14 @@
 export function emotionTextToNumberValue(emotionText){
     switch(emotionText){
         case 'terrible':
-            return 1;
+            return 0;
         case 'bad':
-            return 2;
+            return 1;
         case 'neutral':
-            return 3
+            return 2
         case 'good':
-            return 4;
+            return 3;
         case 'excellent':
-            return 5;
+            return 4;
     }
 }

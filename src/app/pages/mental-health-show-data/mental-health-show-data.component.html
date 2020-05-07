@@ -1,8 +1,36 @@
-
 <app-main-nav-bar></app-main-nav-bar>
-<div class='page-container'>
-    <app-background-image [url]='backgroundImageUrl'></app-background-image>
+<div class="page-container">
+  <app-background-image [url]="backgroundImageUrl"></app-background-image>
+
+  <div class='element-container'>
+      <h2 class='graphTitle'>{{graphTitle}}</h2>
+      <ngx-line-graph
+        class="line-graph"
+        [width]="500"
+        [height]="400"
+        [minX]="0"
+        [maxX]="graphData.length -1"
+        [minY]="0"
+        [maxY]="4"
+        [gridPrecisionX]="100"
+        [gridPrecisionY]="1"
+        xAxisTitle=""
+        yAxisTitle="Happiness"
+        [data]="graphData"
+        color="#ff4446"
+      >
+<!--       monthData? monthData.length - 1: 0
+ -->      </ngx-line-graph>
+      <div class='graph-type-button-container'>
+        <button class='setGraphTypeButton' (click)="setGraphType('month')">
+            Month
+        </button>
+        <button class='setGraphTypeButton'  (click)="setGraphType('week')">
+            Week
+        </button>
+      </div>
+     
+      <app-navigate-to-page-button [navigatePageText]="'Create Journal'" [route]="'create-journal-entry'"></app-navigate-to-page-button>
+  </div>
+  
 </div>
-<a [routerLink]="'/create-journal-entry'">
-    create a journal entry
-</a>

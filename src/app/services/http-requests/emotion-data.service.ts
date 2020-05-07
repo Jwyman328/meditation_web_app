@@ -27,10 +27,11 @@ export class EmotionDataService {
   }
 
   setPastMonthEmotionData(pastMonthData){
-    this.pastMonthData = pastMonthData;
+    
+    this.pastMonthData = this.createGraphDataFromRaw(pastMonthData);
   }
   setPastWeekEmotionData(pastWeekData){
-    this.pastWeekData = pastWeekData
+    this.pastWeekData = this.createGraphDataFromRaw(pastWeekData)
   }
 
   setDateValues(dateArray:string[]){
@@ -55,5 +56,15 @@ export class EmotionDataService {
     this.isError = true;
     this.isSuccess = false;
     this.isLoading = false;
+  }
+
+  createGraphDataFromRaw(rawDataArray){
+    let count = -1
+    let graphFormat = rawDataArray.map((moodPoint) => {
+      count = count + 1;
+      return {x:count,y:moodPoint, info:''}
+    })
+    console.log(graphFormat, 'md')
+    return graphFormat
   }
 }
