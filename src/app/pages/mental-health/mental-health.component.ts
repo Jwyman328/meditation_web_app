@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, DoCheck } from
 import { CreateJournalService } from '../../services/http-requests/create-journal.service';
 import { UserAuthDataService } from '../../services/userData/user-auth-data.service';
 import { emotionTextToNumberValue } from './helper_functions/returnNumberFromEmotionText';
+import { createTodaysFormatedDate } from './helper_functions/createTodaysFormatedDate';
+import { formatJournalPostData } from './helper_functions/formatJournalPostData';
 
 @Component({
   selector: 'app-mental-health',
@@ -31,18 +33,19 @@ export class MentalHealthComponent implements OnInit {
 
   submitEmotion = () => {
     console.log(this.userAuthDataService.token, 'token')
-    let date = this.todayDate.toLocaleDateString() ;
-    let [month,day,year] = date.split('/')
-    let newDate = `${year}-${month}-${day}`
+/*     const formatedDate = createTodaysFormatedDate()
     let emotionNumberValue = emotionTextToNumberValue(this.choosenEmotion)
-    
-    const journalPostData = {date:newDate,text:this.journalText, mood:emotionNumberValue}
+    // createJournalPostDataFromRawData()
+    const journalPostData = {date:formatedDate,text:this.journalText, mood:emotionNumberValue} */
+    const journalPostData = formatJournalPostData(this.choosenEmotion, this.journalText)
+
     const createJournalPostRequest = this.createJournalService.createJournal( journalPostData,this.userAuthDataService.token);
+    
     createJournalPostRequest.subscribe((response) => {
       console.log(response)
       this.createJournalService.handlePostSuccess()
       this.journalText = '';
-      // 
+      // route back to main journal page 
     },(error)=>{
       console.log(error)
       this.createJournalService.handlePostError()
