@@ -7,19 +7,25 @@ import { SelectMeditationCoursePageComponent } from './pages/select-meditation-c
 import { IndividualMeditationCoursePageComponent } from './pages/individual-meditation-course-page/individual-meditation-course-page.component';
 import { IndividualMeditationPageComponent } from './pages/individual-meditation-page/individual-meditation-page.component';
 import { MentalHealthComponent } from './pages/mental-health/mental-health.component';
+
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'signup', component: SignUpPageComponent },
   { path: 'login', component: LoginInPageComponent },
-  {path:'all-meditations', component: SelectMeditationCoursePageComponent},
-  {path: 'individual-meditation-course/:courseId', component: IndividualMeditationCoursePageComponent},
-  {path: 'individual-meditation-page/:courseId/:meditationTitle', component: IndividualMeditationPageComponent},
-  {path: 'mental-mealth',component:MentalHealthComponent}
-
+  { path: 'all-meditations', component: SelectMeditationCoursePageComponent },
+  {
+    path: 'individual-meditation-course/:courseId',
+    component: IndividualMeditationCoursePageComponent,
+  },
+  {
+    path: 'individual-meditation-page/:courseId/:meditationTitle',
+    component: IndividualMeditationPageComponent,
+  },
+  { path: 'mental-health', component: MentalHealthComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

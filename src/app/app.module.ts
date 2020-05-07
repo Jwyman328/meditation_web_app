@@ -27,6 +27,7 @@ import { MentalHealthComponent } from './pages/mental-health/mental-health.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { ChooseEmotionComponent } from './pages/mental-health/local-components/choose-emotion/choose-emotion.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ChooseEmotionComponent } from './pages/mental-health/local-components/c
     MentalHealthComponent,
     ChooseEmotionComponent,
     
+    
   ],
   imports: [
 BrowserModule,
@@ -60,6 +62,7 @@ BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,60 +1,72 @@
-.page-container{
-    width: auto;
-    min-height: 100vh;
-    height: auto;
-    position: relative;
+.page-container {
+  width: auto;
+  min-height: 100vh;
+  height: auto;
+  position: relative;
 }
 .page-elements-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 
-    width: auto;
-    min-height: 80vh;
+  width: auto;
+  min-height: 80vh;
 }
 
 .createMoodContainer {
-    border-width: 3px;
-    border-color:black;
-    border-style: solid;
+  //border-width: 3px;
+  //border-color: black;
+  //border-style: solid;
 
-    height: 30vh;
-    width: 50vw;
+  height: auto;
+  width: 50vw;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-.emotion-phrase{
-    font-size: x-large;
-    font-weight: 600;
+.emotion-phrase {
+  font-size: x-large;
+  font-weight: 600;
 }
 .emotion-text {
-    font-size: x-large;
-    font-weight: 800;
-    color: red;
-    text-transform: uppercase;
+  font-size: x-large;
+  font-weight: 800;
+  color: blue;
+  text-transform: uppercase;
 }
 
 .submitEmotion {
-    width:20vw;
-    height: 5vh;
-    border-radius: 200px;
-    box-shadow: 3px 3px 3px black;
-    transition: all .3;
-    font-size: x-large;
-    text-transform: uppercase;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 200px;
+  box-shadow: 3px 3px 3px black;
+  transition: all 0.3;
+  font-size: x-large;
+  text-transform: uppercase;
 
-    &:hover {
-        transform: scale(1.02);
-        box-shadow: 4px 4px 4px black;
-    }
-    &:active {
-        transform: scale(.99);
-        box-shadow: 2px 2px 2px black;
-    }
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 4px 4px black;
+  }
+  &:active {
+    transform: scale(0.99);
+    box-shadow: 2px 2px 2px black;
+  }
 }
 
+.face-item {
+  transition: all 0.3s;
+  &:hover {
+    //opacity: 0.4;
+    transform: scale(1.14);
+  }
+}
+
+.journal-text-area{
+    height: 30vh;
+    width: 70vw;
+    font-size: large;
+}

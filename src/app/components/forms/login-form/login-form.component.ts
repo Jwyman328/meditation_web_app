@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginUserService } from '../../../services/http-requests/login-user.service';
 import { loginResponseModel } from '../../../models/http-responses/loginResponseModel';
 import { getLoginFormData } from './helperFunctions/getLoginFormData';
+import { UserAuthDataService } from '../../../services/userData/user-auth-data.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -14,7 +15,11 @@ export class LoginFormComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
   });
-  constructor(private route: Router, public loginUser: LoginUserService) {}
+  constructor(
+    private route: Router,
+    public loginUser: LoginUserService,
+    private userAuthDataService: UserAuthDataService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -28,6 +33,8 @@ export class LoginFormComponent implements OnInit {
       loginAttempt.subscribe(
         (responseData: loginResponseModel) => {
           if (responseData.token) {
+            this.userAuthDataService.setToken(responseData.token);
+            this.userAuthDataService.setUsername(postData.username)
             this.loginUser.handleLoginRequestSuccess();
             this.route.navigate(['/']);
           } else {
@@ -39,7 +46,6 @@ export class LoginFormComponent implements OnInit {
           console.log('error', error);
         }
       );
-      
     }
   };
 }

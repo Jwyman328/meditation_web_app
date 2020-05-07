@@ -15,9 +15,6 @@ export class MeditationCourseCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(){
-    console.log(this.courseData, 'cd')
-  }
 
   /**
    * Navigate to the course cards individual course page.
