@@ -1,5 +1,6 @@
 .course-card-container {
     width: 30vw;
+    min-width: 200px;
     height: 35vh;
     position: relative;
     display: flex;
@@ -8,7 +9,7 @@
     overflow: hidden;
     transition: all .3s;
     box-shadow: 5px 5px 5px black;
-    margin-top: 10px;
+    margin: 5px;
 
     &:hover {
         transform: scale(1.02);
