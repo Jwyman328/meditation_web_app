@@ -1,12 +1,14 @@
 .random-meditation {
-    height: 40vw;
+    height: 45vw;
     min-height: 250px;
-    width: 40vw;
+    max-height: 400px;
+    width: 45vw;
     min-width: 250px;
+    max-width: 400px;
     position: relative ;
     border-radius: 40vw;
     border-style: solid;
-    border-color: black;
+    border-color: rgba(0, 0, 0, 0.338);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -25,7 +27,7 @@
        
         background-size: cover;
         z-index:-1;
-        transition: all 2s;
+        transition: all 1s;
 
 
         &:hover {
@@ -48,6 +50,11 @@
         transform: scale(1.1);
         box-shadow: 7px 7px 7px black;
 
+    }
+
+    &:active {
+        transform: scale(.98);
+        box-shadow: 4px 4px 4px black;
     }
 
  

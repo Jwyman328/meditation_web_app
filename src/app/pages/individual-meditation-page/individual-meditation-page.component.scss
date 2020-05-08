@@ -29,10 +29,13 @@
     animation-duration: 6s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    border-color: rgba(0, 0, 0, 0.413);
+    border-style: solid;
 }
 
 .breath-text {
-    font-size: larger;
+    font-size: x-large;
+    text-transform: uppercase;
 }
 
 @keyframes breathAnimation {
