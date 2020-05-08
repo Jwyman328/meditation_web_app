@@ -5,7 +5,7 @@ export const all_meditation_courses = [{
       audio_url:
         'https://ia800900.us.archive.org/32/items/MeditationSocietyOfAustralia/Meditation%20Society%20of%20Australia.MP3',
       order: 1,
-      photo_url: 'https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+      photo_url: 'https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     },
 
     {
@@ -13,7 +13,7 @@ export const all_meditation_courses = [{
       audio_url:
         'https://ia801208.us.archive.org/20/items/QuinnMeditation/Quinn_Meditation.mp3',
       order: 2,
-      photo_url: 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+      photo_url: 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500',
 
     },
   ],
@@ -28,7 +28,7 @@ export const all_meditation_courses = [{
         'https://ia802504.us.archive.org/0/items/MindfulnessBreathMeditation/Mindfulness_Breath_Meditation.mp3',
       order: 1,
       photo_url: 'https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-
+      course_title:'depression free',
     },
 
     {

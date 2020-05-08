@@ -1,0 +1,54 @@
+.random-meditation {
+    height: 40vw;
+    min-height: 250px;
+    width: 40vw;
+    min-width: 250px;
+    position: relative ;
+    border-radius: 40vw;
+    border-style: solid;
+    border-color: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    box-shadow: 5px 5px 5px black;
+    transition: all 1s;
+
+
+    &-photo {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+       
+        background-size: cover;
+        z-index:-1;
+        transition: all 2s;
+
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &-title {
+        color: red;
+        font-weight: 800;
+        font-size: xx-large;
+        //background-color: white;
+        opacity: .8;
+        text-transform: uppercase;
+        box-shadow: 10px 10px 10px black;
+
+    }
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 7px 7px 7px black;
+
+    }
+
+ 
+}

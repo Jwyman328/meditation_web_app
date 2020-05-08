@@ -4,17 +4,14 @@ import { UserAuthDataService } from '../../../services/userData/user-auth-data.s
 @Component({
   selector: 'app-main-nav-bar',
   templateUrl: './main-nav-bar.component.html',
-  styleUrls: ['./main-nav-bar.component.scss']
+  styleUrls: ['./main-nav-bar.component.scss'],
 })
 export class MainNavBarComponent implements OnInit {
-  @Input('isMeditationContainer') isMeditationContainer  = false;
-  constructor(private userAuthDataService: UserAuthDataService ) { }
+  @Input('isMeditationContainer') isMeditationContainer = false;
+  constructor(private userAuthDataService: UserAuthDataService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  handleLogout() {
+    this.userAuthDataService.logOutUser();
   }
-  handleLogout(){
-    console.log('clicked')
-  this.userAuthDataService.logOutUser()
-  }
-
 }

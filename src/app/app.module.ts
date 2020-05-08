@@ -30,6 +30,7 @@ import { ChooseEmotionComponent } from './pages/mental-health/local-components/c
 import { FormsModule } from '@angular/forms';
 import { MentalHealthShowDataComponent } from './pages/mental-health-show-data/mental-health-show-data.component';
 import { BeautifulChartsModule } from 'ngx-beautiful-charts';
+import { SuggestedMeditationComponent } from './components/suggested-meditation/suggested-meditation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +55,7 @@ import { BeautifulChartsModule } from 'ngx-beautiful-charts';
     MentalHealthComponent,
     ChooseEmotionComponent,
     MentalHealthShowDataComponent,
+    SuggestedMeditationComponent,
     
     
   ],
