@@ -8,6 +8,7 @@ import { IndividualMeditationCoursePageComponent } from './pages/individual-medi
 import { IndividualMeditationPageComponent } from './pages/individual-meditation-page/individual-meditation-page.component';
 import { MentalHealthComponent } from './pages/mental-health/mental-health.component';
 import { MentalHealthShowDataComponent } from './pages/mental-health-show-data/mental-health-show-data.component';
+import { PastJournalsComponent } from './pages/past-journals/past-journals.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -24,12 +25,13 @@ const routes: Routes = [
   },
   { path: 'mental-health', component: MentalHealthShowDataComponent },
   { path: 'create-journal-entry', component: MentalHealthComponent },
+  { path: 'past-journals', component: PastJournalsComponent },
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  
+
 exports: [RouterModule],
 })
 export class AppRoutingModule {}

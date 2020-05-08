@@ -1,0 +1,21 @@
+<app-main-nav-bar></app-main-nav-bar>
+<div class='page-container'>
+    <app-background-image [url]='"https://images.pexels.com/photos/751096/pexels-photo-751096.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"'></app-background-image>
+
+    <div class='journal-card' *ngFor="let journal of allJournals">
+        <div class='journal-card-top-header'>
+            <p class='journal-card-date'>{{journal.date}}</p>
+            <p class='journal-card-emotion'>{{emotionNumberToTextValue(journal.mood)}}</p>
+        </div>
+        <p class='journal-card-text'>{{journal.text}}</p>
+      
+    </div>
+    <div class='journal-card'>
+        <div class='journal-card-top-header'>
+            <p class='journal-card-date'>date</p>
+            <p class='journal-card-emotion'>happy</p>
+        </div>
+        <p class='journal-card-text'>lots of text fdshfjksfdasfasdfdlh fkjasdhfljsdhfjksahfjkhdsaklfhasdjfhasdfjhsldjk</p>
+       
+    </div>
+</div>
