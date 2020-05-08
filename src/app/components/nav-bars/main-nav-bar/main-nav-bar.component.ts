@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { UserAuthDataService } from '../../../services/userData/user-auth-data.service';
 
 @Component({
   selector: 'app-main-nav-bar',
@@ -7,9 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MainNavBarComponent implements OnInit {
   @Input('isMeditationContainer') isMeditationContainer  = false;
-  constructor() { }
+  constructor(private userAuthDataService: UserAuthDataService ) { }
 
   ngOnInit(): void {
+  }
+  handleLogout(){
+    console.log('clicked')
+  this.userAuthDataService.logOutUser()
   }
 
 }
