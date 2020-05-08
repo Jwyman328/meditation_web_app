@@ -6,6 +6,12 @@
     height: 10vh ;
 }
 
+.nav-meditation-container{
+    background: linear-gradient( to right,#667db6,white,#0082c8, ); // #667db6,#0082c8,#0082c8,#667db6
+    position: relative;
+    height: 10vh ;
+}
+
 .nav-list {
     display: flex;
     flex-direction: row;
