@@ -48,7 +48,7 @@ export const meditationsAccessibleByTitle = {
       'https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     course_title: 'depression free',
   },
-  'happiness': {
+  happiness: {
     individual_meditations: [
       {
         title: 'happiness one',
@@ -72,25 +72,73 @@ export const meditationsAccessibleByTitle = {
       'https://images.pexels.com/photos/1450082/pexels-photo-1450082.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
     course_title: 'happiness',
   },
-  'relaxation': {individual_meditations: [
+  relaxation: {
+    individual_meditations: [
+      {
+        title: 'relaxation one',
+        audio_url:
+          'https://ia902506.us.archive.org/11/items/MindfulnessBodyMeditation/Mindfulness_Body_Meditation.mp3',
+        order: 1,
+        photo_url:
+          'https://images.pexels.com/photos/1131458/pexels-photo-1131458.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+      },
+
+      {
+        title: 'relaxation  two',
+        audio_url:
+          'https://ia802501.us.archive.org/21/items/MeditationBreathSilence62414/Meditation_Breath_Silence%20-%206_24_14.mp3',
+        order: 2,
+        photo_url:
+          'https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+      },
+    ],
+    photo_url:
+      'https://images.pexels.com/photos/1131458/pexels-photo-1131458.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    course_title: 'relaxation',
+  },
+  Freedom: {
+    individual_meditations: [
+      {
+        title: 'Freedom one',
+        audio_url:
+          'https://ia801201.us.archive.org/31/items/KathleensMeditation/Kathleen%27s%20Meditation.mp3',
+        order: 1,
+        photo_url:
+          'https://images.pexels.com/photos/230629/pexels-photo-230629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+      },
+
+      {
+        title: 'Freedom two',
+        audio_url:
+          'https://ia902806.us.archive.org/25/items/TravelingMeditation/GuidedMeditation.mp3',
+        order: 2,
+        photo_url:
+          'https://images.pexels.com/photos/1122868/pexels-photo-1122868.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+      },
+    ],
+    photo_url:
+      'https://images.pexels.com/photos/1122868/pexels-photo-1122868.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+    course_title: 'Freedom',
+  },
+  'Face Fear': {individual_meditations: [
     {
-      title: 'relaxation one',
+      title: 'Face fear one',
       audio_url:
-        'https://ia902506.us.archive.org/11/items/MindfulnessBodyMeditation/Mindfulness_Body_Meditation.mp3',
+        'https://ia800308.us.archive.org/4/items/HealingMeditation/HealingMeditation.mp3',
       order: 1,
-      photo_url:'https://images.pexels.com/photos/1131458/pexels-photo-1131458.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+      photo_url:'https://images.pexels.com/photos/89770/pexels-photo-89770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
     },
-
+  
     {
-      title: 'relaxation  two',
+      title: 'Face fear two',
       audio_url:
-        'https://ia802501.us.archive.org/21/items/MeditationBreathSilence62414/Meditation_Breath_Silence%20-%206_24_14.mp3',
+        'https://ia800605.us.archive.org/29/items/BreathMeditation/MindfulnessOfBreathing1.mp3',
       order: 2,
-      photo_url:'https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
-
+      photo_url:'https://images.pexels.com/photos/1598073/pexels-photo-1598073.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+  
     },
   ],
-  photo_url:'https://images.pexels.com/photos/1131458/pexels-photo-1131458.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-  course_title: 'relaxation'}
-};
-
+  photo_url:'https://images.pexels.com/photos/1598073/pexels-photo-1598073.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+  course_title: 'Face Fear'
+}
+}

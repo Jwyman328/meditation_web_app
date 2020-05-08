@@ -88,5 +88,48 @@ export const all_meditation_courses = [{
   photo_url:'https://images.pexels.com/photos/1131458/pexels-photo-1131458.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
   course_title: 'relaxation'
 
+},{individual_meditations: [
+  {
+    title: 'Freedom one',
+    audio_url:
+      'https://ia801201.us.archive.org/31/items/KathleensMeditation/Kathleen%27s%20Meditation.mp3',
+    order: 1,
+    photo_url:'https://images.pexels.com/photos/230629/pexels-photo-230629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+  },
+
+  {
+    title: 'Freedom two',
+    audio_url:
+      'https://ia902806.us.archive.org/25/items/TravelingMeditation/GuidedMeditation.mp3',
+    order: 2,
+    photo_url:'https://images.pexels.com/photos/1122868/pexels-photo-1122868.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+
+  },
+],
+photo_url:'https://images.pexels.com/photos/1122868/pexels-photo-1122868.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+course_title: 'Freedom'
+
+},
+{individual_meditations: [
+  {
+    title: 'Face fear one',
+    audio_url:
+      'https://ia800308.us.archive.org/4/items/HealingMeditation/HealingMeditation.mp3',
+    order: 1,
+    photo_url:'https://images.pexels.com/photos/89770/pexels-photo-89770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+  },
+
+  {
+    title: 'Face fear two',
+    audio_url:
+      'https://ia800605.us.archive.org/29/items/BreathMeditation/MindfulnessOfBreathing1.mp3',
+    order: 2,
+    photo_url:'https://images.pexels.com/photos/1598073/pexels-photo-1598073.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+
+  },
+],
+photo_url:'https://images.pexels.com/photos/1598073/pexels-photo-1598073.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+course_title: 'Face Fear'
+
 },
 ];
