@@ -19,8 +19,8 @@ import { UserAuthDataService } from '../../../services/userData/user-auth-data.s
 export class MainNavBarComponent implements OnInit {
   @ViewChild('navContainerElement') navContainerElement: ElementRef;
   @Input('isMeditationContainer') isMeditationContainer = false;
-  mobileHeader;
-  isHeaderOpen = true;
+  isMobileHeader;
+  isHeaderOpen = false;
   width: number;
   constructor(
     private userAuthDataService: UserAuthDataService,
@@ -44,9 +44,9 @@ export class MainNavBarComponent implements OnInit {
   setHeaderBasedOffPageWidth(){
     this.width = this.navContainerElement.nativeElement.offsetWidth;
     if (this.navContainerElement.nativeElement.offsetWidth < 450) {
-      this.mobileHeader = true;
+      this.isMobileHeader = true;
     } else {
-      this.mobileHeader = false;
+      this.isMobileHeader = false;
     }
     this.cdr.detectChanges();
   }

@@ -20,8 +20,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40vw;
-    width: 40vw;
+    height: 30vw;
+    min-height: 200px;
+    min-width: 200px;
+    width: 30vw;
     border-radius: 50%;
     opacity: .8;
     background: linear-gradient(to bottom, #667db6,#0082c8,#0082c8,#667db6);
