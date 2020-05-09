@@ -1,5 +1,6 @@
 .page-container{
     width: auto;
+    min-width: 100vw;
     min-height: 100vh;
     height: auto;
     position: relative;
@@ -18,12 +19,15 @@
 .line-graph {
     font-size: x-large;
     margin:10px;
+    margin-top: 650px;
+
 }
 
 .graph-type-button-container {
     display: flex;
     flex-direction: row;
-    width: 40vw;
+    width: 80vw;
+    min-width: 300px;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
@@ -50,10 +54,21 @@
     }
 }
 
+.graphTitleContainer {
+    position: relative;
+    margin-top: 350px;
+    text-align: center;
+
+
+}
+
 .graphTitle {
     justify-self: center;
-    position: relative;
-    top:25px;
+    position: static;
+
+    display: block;
     text-transform: uppercase;
     font-weight: 800;
+    text-align: center;
+   
 }

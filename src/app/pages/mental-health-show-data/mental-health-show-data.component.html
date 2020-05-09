@@ -1,12 +1,13 @@
 <app-main-nav-bar></app-main-nav-bar>
-<div class="page-container">
+<div class="page-container" #pageContainer>
   <app-background-image [url]="backgroundImageUrl"></app-background-image>
 
   <div class='element-container'>
+    <div class='graphTitleContainer'>
       <h1 class='graphTitle'>{{graphTitle}}</h1>
       <ngx-line-graph
         class="line-graph"
-        [width]="500"
+        [width]="graphWidth"
         [height]="400"
         [minX]="0"
         [maxX]="graphData.length -1"
@@ -21,6 +22,8 @@
       >
 <!--       monthData? monthData.length - 1: 0
  -->      </ngx-line-graph>
+    </div>
+    
       <div class='graph-type-button-container'>
         <button class='setGraphTypeButton' (click)="setGraphType('month')">
             Month Data

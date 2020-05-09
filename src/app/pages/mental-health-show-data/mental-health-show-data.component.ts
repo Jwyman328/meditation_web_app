@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { EmotionDataService } from '../../services/http-requests/emotion-data.service';
 import { UserAuthDataService } from '../../services/userData/user-auth-data.service';
 import { Router } from '@angular/router';
@@ -15,6 +15,8 @@ export class MentalHealthShowDataComponent implements OnInit {
   graphData = this.monthData;
   currentGraph = 'month';
   today = new Date();
+  graphWidth;
+  @ViewChild('pageContainer') pageContainer:ElementRef;
   dateOneMonthAgo: any = new Date(
     new Date().setMonth(this.today.getMonth() - 1)
   );
@@ -28,6 +30,10 @@ export class MentalHealthShowDataComponent implements OnInit {
     private userAuthDataService: UserAuthDataService,
     private route: Router
   ) {}
+
+  ngAfterViewInit(){
+   this.graphWidth = this.pageContainer.nativeElement.offsetWidth * .8
+  }
 
   ngOnInit(): void {
     //makae a request and get the data to display
