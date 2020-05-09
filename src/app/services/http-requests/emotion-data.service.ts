@@ -18,7 +18,7 @@ export class EmotionDataService {
    */
   getAllEmotionData(token){
     this.handleGetRequestSent();
-    return this.http.get('http://intense-gorge-29567.herokuapp.com/Journal/last_week_moods/str',
+    return this.http.get('https://intense-gorge-29567.herokuapp.com/Journal/last_week_moods/str',
     {headers: new HttpHeaders({ Authorization: `JWT ${token}`,'Content-Type': 'application/json'})})
   }
 

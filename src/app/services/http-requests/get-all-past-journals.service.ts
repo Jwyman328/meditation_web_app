@@ -14,7 +14,7 @@ export class GetAllPastJournalsService {
     console.log(token, 'tok')
     this.handleGetRequestSent();
     return this.http.get(
-      'http://intense-gorge-29567.herokuapp.com/Journal/all_user_entries',
+      'https://intense-gorge-29567.herokuapp.com/Journal/all_user_entries',
       {
         headers: new HttpHeaders({
           Authorization: `JWT ${token}`,

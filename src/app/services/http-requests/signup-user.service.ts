@@ -16,7 +16,7 @@ export class SignupUserService {
   postSignUpUser(signUpData:signUpDataModel):any {
     this.handleSignUpRequestSent();
     return this.http.post(
-      'http://intense-gorge-29567.herokuapp.com/sign_up',
+      'https://intense-gorge-29567.herokuapp.com/sign_up',
       signUpData,{headers: new HttpHeaders({ 'Content-Type': 'application/json'})}
     );
   }

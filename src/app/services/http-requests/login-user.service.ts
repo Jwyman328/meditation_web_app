@@ -15,7 +15,7 @@ export class LoginUserService {
   postLoginUser(loginData:loginPostDataModel) {
     this.handleLoginRequestSent();
     return this.http.post(
-      'http://intense-gorge-29567.herokuapp.com/sign_in',
+      'https://intense-gorge-29567.herokuapp.com/sign_in',
       loginData,{headers: new HttpHeaders({ 'Content-Type': 'application/json'})}
     );
   }

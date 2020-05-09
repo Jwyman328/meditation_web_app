@@ -14,7 +14,7 @@ export class CreateJournalService {
 
   createJournal = (journalData:createJournalPostModel, token) => {
     this.handlePostSent();
-    return this.http.post(`http://intense-gorge-29567.herokuapp.com/Journal/all_user_entries`,journalData,
+    return this.http.post(`https://intense-gorge-29567.herokuapp.com/Journal/all_user_entries`,journalData,
     {headers: new HttpHeaders({ Authorization: `JWT ${token}`,'Content-Type': 'application/json'}) })
   }
 
