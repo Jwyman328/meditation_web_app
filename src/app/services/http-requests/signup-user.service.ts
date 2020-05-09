@@ -13,7 +13,7 @@ export class SignupUserService {
   isSuccess=false;
   isLoading=false;
 
-  postSignUpUser(signUpData:signUpDataModel) {
+  postSignUpUser(signUpData:signUpDataModel):any {
     this.handleSignUpRequestSent();
     return this.http.post(
       'http://intense-gorge-29567.herokuapp.com/sign_up',

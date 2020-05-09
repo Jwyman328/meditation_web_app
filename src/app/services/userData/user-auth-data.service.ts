@@ -11,12 +11,17 @@ export class UserAuthDataService {
   isLoggedIn=false;
   constructor(private route:Router) { }
 
+  getToken(){
+    return localStorage.getItem('token')
+  }
+
   setUsername = (username:string) => {
     this.username = username;
   }
 
   setToken = (token:string) => {
     this.token = token;
+    localStorage.setItem('token',token)
   }
 
   loginUser(){
@@ -25,8 +30,10 @@ export class UserAuthDataService {
 
   logOutUser(){
     this.isLoggedIn = false;
+    localStorage.clear();
     this.username='';
     this.token='';
     this.route.navigate(['login'])
+    
   }
 }

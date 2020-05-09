@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { isPasswordAndRepeatPasswordAreEqual } from '../../../custom-validators/password-repeatPassword-equal-validator';
 import { SignupUserService } from '../../../services/http-requests/signup-user.service';
 import { getSignUpFormData } from '../login-form/helperFunctions/getSignUpFormData';
+import { UserAuthDataService } from '../../../services/userData/user-auth-data.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -25,7 +26,7 @@ export class SignupFormComponent implements OnInit {
     repeatPassword: new FormControl(''),
   });
 
-  constructor(private router: Router, public signupUser:SignupUserService) {}
+  constructor(private router: Router, public signupUser:SignupUserService, private userAuthDataService: UserAuthDataService) {}
 
   ngOnInit(): void {}
 
@@ -47,6 +48,8 @@ export class SignupFormComponent implements OnInit {
         let signUpAttempt =  this.signupUser.postSignUpUser(signUpPostData);
         signUpAttempt.subscribe((userToken) => {
             if (userToken){
+              console.log(userToken, 'ut')
+              this.userAuthDataService.setToken(userToken.token)
               this.signupUser.handleSignUpRequestSuccess()
               this.signUpForm.reset();
               this.router.navigate(['/']);

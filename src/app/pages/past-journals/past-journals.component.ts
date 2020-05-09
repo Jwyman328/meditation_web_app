@@ -18,7 +18,7 @@ export class PastJournalsComponent implements OnInit {
 
   ngOnInit(): void {
     const allPastJournalsRequest = this.getAllPastJournalsService.getAllPastJournals(
-      this.userAuthDataService.token
+      this.userAuthDataService.getToken()
     );
     allPastJournalsRequest.subscribe((allJournals) => {
       this.allJournals = allJournals;

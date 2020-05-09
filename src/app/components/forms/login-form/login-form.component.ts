@@ -33,6 +33,7 @@ export class LoginFormComponent implements OnInit {
       loginAttempt.subscribe(
         (responseData: loginResponseModel) => {
           if (responseData.token) {
+            localStorage.setItem('token',responseData.token)
             this.userAuthDataService.setToken(responseData.token);
             this.userAuthDataService.setUsername(postData.username)
             this.loginUser.handleLoginRequestSuccess();

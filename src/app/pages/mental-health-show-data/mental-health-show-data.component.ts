@@ -38,7 +38,7 @@ export class MentalHealthShowDataComponent implements OnInit {
   ngOnInit(): void {
     //makae a request and get the data to display
     this.emotionDataService
-      .getAllEmotionData(this.userAuthDataService.token)
+      .getAllEmotionData(this.userAuthDataService.getToken())
       .subscribe(
         (emotionDataResponse) => {
           console.log(emotionDataResponse, 'dr');

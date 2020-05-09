@@ -52,7 +52,7 @@ export class MentalHealthComponent implements OnInit {
 
     const createJournalPostRequest = this.createJournalService.createJournal(
       journalPostData,
-      this.userAuthDataService.token
+      this.userAuthDataService.getToken()
     );
 
     createJournalPostRequest.subscribe(
