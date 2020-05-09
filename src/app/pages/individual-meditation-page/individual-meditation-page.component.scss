@@ -1,6 +1,6 @@
 .page-container{
     width: auto;
-    min-height: 90vh;
+    min-height: 80vh;
     height: auto;
     position: relative;
     display: flex;
@@ -12,6 +12,8 @@
 
 .audioPlayer {
     z-index: 10000;
+}
+.page-header-container {
 }
 
 
@@ -34,6 +36,7 @@
     border-color: rgba(0, 0, 0, 0.413);
     border-style: solid;
 }
+
 
 .breath-text {
     font-size: x-large;
