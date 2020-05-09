@@ -2,9 +2,9 @@
     <app-background-image [url]='backgroundImage' ></app-background-image>
     <app-main-nav-bar></app-main-nav-bar>
     <div class='page-elements-container'>
-        <p class='emotion-phrase'>
+        <h1 class='emotion-phrase'>
          Today {{todayDate|date}}  I'm feeling <span class='emotion-text'>{{choosenEmotion}}</span>
-        </p>
+        </h1>
 
         <textarea [(ngModel)]='journalText' class='journal-text-area'></textarea>
 
