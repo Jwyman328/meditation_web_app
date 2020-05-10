@@ -24,16 +24,16 @@ Choose a Meditation Course |  Choose a Meditation      |  Listen to the Meditati
 
 Mood Data            |  
 :-------------------------:|
-<image src='images/docImages/meditation_web_app_journal_photo.png'  width=250 height=400 />  
+<image src='src/images/docImages/meditation_web_app_journal_photo.png'  width=250 height=400 />  
 
 <h4>Read Past Journals</h4>
-<image src='images/docImages/all_journals.png'  width=250 height=400 />
+<image src='src/images/docImages/all_journals.png'  width=250 height=400 />
 
 <h4>Track your monthly and weekly Mood changes</h4>
 
 Monthly Moods              |  
 :-------------------------:|
-<image src='images/docImages/journal_data.png'  width=250 height=400 />  
+<image src='src/images/docImages/journal_data.png'  width=250 height=400 />  
 
 
 <br></br>
