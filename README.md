@@ -13,7 +13,7 @@
 
 Choose a Meditation Course |  Choose a Meditation      |  Listen to the Meditation |  
 :-------------------------:|:-------------------------:|:-------------------------:|
-<image src='images/docImages/choose_meditation_course.png'  width=250 height=400 /> |  <image src='images/docImages/meditation_web_app_fs_photo.png'  width=250 height=400 /> |  <image src='images/docImages/individual_meditation.png'  width=250 height=400 />  | 
+<image src='src/images/docImages/choose_meditation_course.png'  width=250 height=400 /> |  <image src='src/images/docImages/meditation_web_app_fs_photo.png'  width=250 height=400 /> |  <image src='src/images/docImages/individual_meditation.png'  width=250 height=400 />  | 
 
 
 
