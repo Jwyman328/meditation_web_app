@@ -19,7 +19,7 @@ import { UserAuthDataService } from '../../../services/userData/user-auth-data.s
 export class MainNavBarComponent implements OnInit {
   @ViewChild('navContainerElement') navContainerElement: ElementRef;
   @Input('isMeditationContainer') isMeditationContainer = false;
-  isMobileHeader;
+  isMobileHeader:boolean;
   isHeaderOpen = false;
   width: number;
   constructor(

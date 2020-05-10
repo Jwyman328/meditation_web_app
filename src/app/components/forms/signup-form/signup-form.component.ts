@@ -11,6 +11,7 @@ import { isPasswordAndRepeatPasswordAreEqual } from '../../../custom-validators/
 import { SignupUserService } from '../../../services/http-requests/signup-user.service';
 import { getSignUpFormData } from '../login-form/helperFunctions/getSignUpFormData';
 import { UserAuthDataService } from '../../../services/userData/user-auth-data.service';
+import { signUpServerResponse } from '../../../models/http-responses/signUpServerResponse';
 
 @Component({
   selector: 'app-signup-form',
@@ -46,9 +47,8 @@ export class SignupFormComponent implements OnInit {
       if (this.signUpForm.valid) {
         let signUpPostData = getSignUpFormData(this.signUpForm);
         let signUpAttempt =  this.signupUser.postSignUpUser(signUpPostData);
-        signUpAttempt.subscribe((userToken) => {
+        signUpAttempt.subscribe((userToken:signUpServerResponse) => {
             if (userToken){
-              console.log(userToken, 'ut')
               this.userAuthDataService.setToken(userToken.token)
               this.signupUser.handleSignUpRequestSuccess()
               this.signUpForm.reset();

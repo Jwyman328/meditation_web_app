@@ -4,3 +4,4 @@ export interface individualMeditationModel {
     order: number,
     photo_url:string,
 }
+

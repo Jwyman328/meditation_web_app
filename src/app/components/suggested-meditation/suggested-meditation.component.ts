@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { getRandomIndexFromArray } from '../../pages/homepage/helperFunctions/getRandomIndexFromArray';
 import { all_meditation_courses } from '../../meditation-data/all_meditation_courses';
+import { individualMeditationModel } from '../../models/meditation-models/individual-meditationModel';
 
 @Component({
   selector: 'app-suggested-meditation',
@@ -10,8 +11,8 @@ import { all_meditation_courses } from '../../meditation-data/all_meditation_cou
 })
 export class SuggestedMeditationComponent implements OnInit {
 
-  randomMeditation;
-  randomCourseTitle;
+  randomMeditation:individualMeditationModel;
+  randomCourseTitle:string;
   constructor(private route:Router) {}
 
   ngOnInit(): void {
@@ -24,17 +25,11 @@ export class SuggestedMeditationComponent implements OnInit {
   }
 
   getRandomMeditation(){
-    // get a random number for the length of all meditation courses 
-    //let randomCourseNumber = all_meditation_courses.length
     const randomCourseNumber = getRandomIndexFromArray(all_meditation_courses);
     const randomCourseMeditations =  all_meditation_courses[randomCourseNumber].individual_meditations
     this.randomCourseTitle =  all_meditation_courses[randomCourseNumber].course_title
     const randomMeditationIndex = getRandomIndexFromArray(randomCourseMeditations)
     this.randomMeditation =  randomCourseMeditations[randomMeditationIndex]
-    console.log(this.randomMeditation,this.randomCourseTitle)
-    //this.route.navigate(['individual-meditation-page',randomCourseTitle,randomMeditation.title])
-    //'individual-meditation-page/:courseId/:meditationTitle'
-
   }
 
 }
