@@ -52,9 +52,4 @@ Monthly Moods              |
   <li>PostgresSQL</li>
  </ul>
  
-<h6>Testing</h6>
-<ul>
- <li>Jest</li>
- <li>React Native Testing Library</li>
- </ul>
 
