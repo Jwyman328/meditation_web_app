@@ -1,27 +1,60 @@
-# MeditationWebApp
+<h1 style="color:blue">A meditation application with extensive features!</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+<h2> Features</h2>
+<ul>
+ <li>Listen to Meditations</li>
+   <li>Track your Mood/ Mood swings</li>
+   <li>Create a Journal</li>
+ </ul>
 
-## Development server
+<br></br>
+<h2> Meditations </h2>
+<h4>Choose your meditation and meditate</h4>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Choose a Meditation Course |  Choose a Meditation      |  Listen to the Meditation |  
+:-------------------------:|:-------------------------:|:-------------------------:|
+<image src='images/docImages/choose_meditation_course.png'  width=250 height=400 /> |  <image src='images/docImages/meditation_web_app_fs_photo.png'  width=250 height=400 /> |  <image src='images/docImages/individual_meditation.png'  width=250 height=400 />  | 
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+<br></br>
+<h2> Mood Tracking and Journaling </h2>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<h4>Track your Moods and Journal to better understand your mental health</h4>
 
-## Running unit tests
+Mood Data            |  
+:-------------------------:|
+<image src='images/docImages/meditation_web_app_journal_photo.png'  width=250 height=400 />  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<h4>Read Past Journals</h4>
+<image src='images/docImages/all_journals.png'  width=250 height=400 />
 
-## Running end-to-end tests
+<h4>Track your monthly and weekly Mood changes</h4>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Monthly Moods              |  
+:-------------------------:|
+<image src='images/docImages/journal_data.png'  width=250 height=400 />  
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<br></br>
+<h2> Technologies Used </h2>
+<h6> Front End </h6>
+<ul>
+ <li>Angular</li>
+ <li>TypeScript</li>
+ <li>Sass</li>
+ </ul>
+ 
+ <h6> Back End </h6>
+<ul>
+ <li>Django/Python</li>
+ <li>Django REST Framework</li>
+  <li>PostgresSQL</li>
+ </ul>
+ 
+<h6>Testing</h6>
+<ul>
+ <li>Jest</li>
+ <li>React Native Testing Library</li>
+ </ul>
+
