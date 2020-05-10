@@ -9,23 +9,26 @@ import { IndividualMeditationPageComponent } from './pages/individual-meditation
 import { MentalHealthComponent } from './pages/mental-health/mental-health.component';
 import { MentalHealthShowDataComponent } from './pages/mental-health-show-data/mental-health-show-data.component';
 import { PastJournalsComponent } from './pages/past-journals/past-journals.component';
+import { AuthGuard } from './services/auth-guards/user-authenticated-guard';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent },
+  { path: '', component: HomepageComponent,canActivate:[AuthGuard] },//, 
   { path: 'signup', component: SignUpPageComponent },
   { path: 'login', component: LoginInPageComponent },
-  { path: 'all-meditations', component: SelectMeditationCoursePageComponent },
+  { path: 'all-meditations', component: SelectMeditationCoursePageComponent,canActivate:[AuthGuard] },
   {
     path: 'individual-meditation-course/:courseId',
     component: IndividualMeditationCoursePageComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'individual-meditation-page/:courseId/:meditationTitle',
     component: IndividualMeditationPageComponent,
+    canActivate:[AuthGuard]
   },
-  { path: 'mental-health', component: MentalHealthShowDataComponent },
-  { path: 'create-journal-entry', component: MentalHealthComponent },
-  { path: 'past-journals', component: PastJournalsComponent },
+  { path: 'mental-health', component: MentalHealthShowDataComponent,canActivate:[AuthGuard] },
+  { path: 'create-journal-entry', component: MentalHealthComponent ,canActivate:[AuthGuard]},
+  { path: 'past-journals', component: PastJournalsComponent,canActivate:[AuthGuard] },
 
 ];
 
