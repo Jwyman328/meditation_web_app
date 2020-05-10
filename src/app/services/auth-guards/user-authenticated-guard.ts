@@ -16,8 +16,7 @@ constructor(private userAuthDataService: UserAuthDataService, private router: Ro
     route: ActivatedRouteSnapshot,
     router: RouterStateSnapshot
   ): boolean | Promise<boolean> | any {
-      console.log(this.userAuthDataService.isLoggedIn, 'login',
-      this.userAuthDataService.getToken(),'token')
+
       if ( this.userAuthDataService.getToken()){
           return true;
       }else {
