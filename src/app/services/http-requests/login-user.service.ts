@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { loginPostDataModel } from 'src/app/models/http-responses/loginPostDataModel';
 import { RequestSentStatus } from './RequestSentStatusHandler/RequestSentStatusHandler';
@@ -10,10 +10,6 @@ export class LoginUserService extends RequestSentStatus {
   constructor(private http: HttpClient) {
     super();
   }
-
-/*   isError=false;
-  isSuccess=false;
-  isLoading=false; */
 
   postLoginUser(loginData:loginPostDataModel) {
     this.handleRequestSent();

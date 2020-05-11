@@ -58,14 +58,14 @@ export class MentalHealthComponent implements OnInit {
     createJournalPostRequest.subscribe(
       (response) => {
         console.log(response);
-        this.createJournalService.handlePostSuccess();
+        this.createJournalService.handleRequestSuccess();
         this.journalText = '';
         // route back to main journal page
         this.route.navigate(['mental-health'])
       },
       (error) => {
         console.log(error);
-        this.createJournalService.handlePostError();
+        this.createJournalService.handleRequestError();
       }
     );
     console.log('submitted boy');
