@@ -4,23 +4,19 @@ import { signUpDataModel } from '../../models/http-responses/signUpDataModel';
 import { RequestSentStatus } from './RequestSentStatusHandler/RequestSentStatusHandler';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SignupUserService extends RequestSentStatus {
-
   constructor(private http: HttpClient) {
     super();
   }
 
-/*   isError=false;
-  isSuccess=false;
-  isLoading=false; */
-
-  postSignUpUser(signUpData:signUpDataModel):any {
+  postSignUpUser(signUpData: signUpDataModel): any {
     this.handleRequestSent();
     return this.http.post(
       'https://intense-gorge-29567.herokuapp.com/sign_up',
-      signUpData,{headers: new HttpHeaders({ 'Content-Type': 'application/json'})}
+      signUpData,
+      { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
     );
   }
 }

@@ -24,7 +24,7 @@ export class PastJournalsComponent implements OnInit {
       this.allJournals = allJournals;
     }, (error)=> {
       console.log(error)
-      this.getAllPastJournalsService.handleGetRequestError()
+      this.getAllPastJournalsService.handleRequestError()
     })
   }
 

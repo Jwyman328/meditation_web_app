@@ -49,11 +49,11 @@ export class MentalHealthShowDataComponent implements OnInit {
             emotionDataResponse[0]['moods_range'][0]
           );
           this.graphData = this.weekData;
-          this.emotionDataService.handleGetRequestSuccess();
+          this.emotionDataService.handleRequestSuccess();
         },
         (error) => {
           console.log(error);
-          this.emotionDataService.handleGetRequestError();
+          this.emotionDataService.handleRequestError();
         }
       );
   }
