@@ -1,4 +1,4 @@
-export function emotionNumberToTextValue(emotionNumber){
+export function emotionNumberToTextValue(emotionNumber:number){
     switch(emotionNumber){
         case 0:
             return 'terrible';

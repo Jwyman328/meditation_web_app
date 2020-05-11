@@ -1,4 +1,4 @@
-export function createGraphDataFromRaw(rawDataArray) {
+export function createGraphDataFromRaw(rawDataArray:number[]) {
     let count = -1;
     let graphFormat = rawDataArray.map((moodPoint) => {
       count = count + 1;

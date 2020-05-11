@@ -3,6 +3,8 @@ import { EmotionDataService } from '../../services/http-requests/emotion-data.se
 import { UserAuthDataService } from '../../services/userData/user-auth-data.service';
 import { Router } from '@angular/router';
 import { createGraphDataFromRaw } from './helperFunctions/createGraphDataFromRawData';
+import { emotionDataResponseModel } from 'src/app/models/http-responses/emotionDataResponseModel';
+import { individualGraphDataPoint } from 'src/app/models/graphModels/graphDataFormat';
 
 @Component({
   selector: 'app-mental-health-show-data',
@@ -10,12 +12,12 @@ import { createGraphDataFromRaw } from './helperFunctions/createGraphDataFromRaw
   styleUrls: ['./mental-health-show-data.component.scss'],
 })
 export class MentalHealthShowDataComponent implements OnInit {
-  monthData = [];
-  weekData = [];
+  monthData:individualGraphDataPoint[];
+  weekData:individualGraphDataPoint[];
   graphData = this.monthData;
   currentGraph = 'month';
   today = new Date();
-  graphWidth;
+  graphWidth:number;
   @ViewChild('pageContainer') pageContainer:ElementRef;
   dateOneMonthAgo: any = new Date(
     new Date().setMonth(this.today.getMonth() - 1)
@@ -40,7 +42,7 @@ export class MentalHealthShowDataComponent implements OnInit {
     this.emotionDataService
       .getAllEmotionData(this.userAuthDataService.getToken())
       .subscribe(
-        (emotionDataResponse) => {
+        (emotionDataResponse:emotionDataResponseModel) => {
           console.log(emotionDataResponse, 'dr');
           this.monthData = createGraphDataFromRaw(
             emotionDataResponse[0]['moods_range'][1]
@@ -58,7 +60,7 @@ export class MentalHealthShowDataComponent implements OnInit {
       );
   }
 
-  setGraphType(graphType) {
+  setGraphType(graphType:string) {
     this.currentGraph = graphType;
     if (graphType === 'month') {
       this.graphTitle = `My Emotions: ${this.dateOneMonthAgo.toLocaleDateString()}-${this.today.toLocaleDateString()}`;

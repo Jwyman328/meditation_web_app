@@ -13,7 +13,7 @@ export class CreateJournalService extends RequestSentStatus {
     super();
    }
 
-  createJournal = (journalData:createJournalPostModel, token) => {
+  createJournal = (journalData:createJournalPostModel, token:string) => {
     this.handleRequestSent();
     return this.http.post(`https://intense-gorge-29567.herokuapp.com/Journal/all_user_entries`,journalData,
     {headers: new HttpHeaders({ Authorization: `JWT ${token}`,'Content-Type': 'application/json'}) })

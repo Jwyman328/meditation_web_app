@@ -34,7 +34,7 @@ export class MentalHealthComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  setEmotion = (emotion) => {
+  setEmotion = (emotion:string) => {
     this.choosenEmotion = emotion;
   };
 

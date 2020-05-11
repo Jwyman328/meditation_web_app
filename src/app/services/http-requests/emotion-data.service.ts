@@ -15,7 +15,7 @@ export class EmotionDataService extends RequestSentStatus {
    * Fetch emotion data that will include past thirty days 
    * and past week.
    */
-  getAllEmotionData(token){
+  getAllEmotionData(token:string){
     this.handleRequestSent();
     return this.http.get('https://intense-gorge-29567.herokuapp.com/Journal/last_week_moods/str',
     {headers: new HttpHeaders({ Authorization: `JWT ${token}`,'Content-Type': 'application/json'})})

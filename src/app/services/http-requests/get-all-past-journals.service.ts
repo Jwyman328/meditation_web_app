@@ -10,7 +10,7 @@ export class GetAllPastJournalsService extends RequestSentStatus {
     super();
   }
 
-  getAllPastJournals(token) {
+  getAllPastJournals(token:string) {
     console.log(token, 'tok')
     this.handleRequestSent();
     return this.http.get(
