@@ -1,7 +1,6 @@
 
 import { createTodaysFormatedDate } from './createTodaysFormatedDate';
 import { emotionTextToNumberValue } from './returnNumberFromEmotionText';
-
 /**
  * Create the correct format for the post body data to create a journal.
  * 

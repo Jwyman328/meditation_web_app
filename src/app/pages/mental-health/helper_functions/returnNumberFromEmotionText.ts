@@ -1,4 +1,6 @@
-export function emotionTextToNumberValue(emotionText){
+import { emotionTextToNumberValueModel } from '../../../models/helpFunctionModels/emotionTextToNumberValueModel';
+
+export const emotionTextToNumberValue:emotionTextToNumberValueModel = (emotionText) => {
     switch(emotionText){
         case 'terrible':
             return 0;
