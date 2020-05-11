@@ -1,41 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { signUpDataModel } from '../../models/http-responses/signUpDataModel';
+import { RequestSentStatus } from './RequestSentStatusHandler/RequestSentStatusHandler';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SignupUserService {
+export class SignupUserService extends RequestSentStatus {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    super();
+  }
 
-  isError=false;
+/*   isError=false;
   isSuccess=false;
-  isLoading=false;
+  isLoading=false; */
 
   postSignUpUser(signUpData:signUpDataModel):any {
-    this.handleSignUpRequestSent();
+    this.handleRequestSent();
     return this.http.post(
       'https://intense-gorge-29567.herokuapp.com/sign_up',
       signUpData,{headers: new HttpHeaders({ 'Content-Type': 'application/json'})}
     );
-  }
-
-  handleSignUpRequestSent(){
-    this.isLoading = true;
-    this.isSuccess = false;
-    this.isError = false;
-  }
-
-  handleSignUpRequestSuccess(){
-    this.isError = false;
-    this.isSuccess = true;
-    this.isLoading = false;
-  }
-
-  handleSignUpRequestError(){
-    this.isError = true;
-    this.isSuccess = false;
-    this.isLoading = false;
   }
 }

@@ -40,11 +40,11 @@
     >
       Please Input a valid email
     </p>
+    <p class="error-msg"
+    *ngIf="signupUser.isError">
+      Username is invalid or already taken, please try again. 
+    </p>
   </div>
-
-<!--   <button type="submit" (click)="onSubmitForm()">
-    submit
-  </button> -->
   <app-form-button [handleSubmit]='onSubmitForm'></app-form-button>
 </form>
 

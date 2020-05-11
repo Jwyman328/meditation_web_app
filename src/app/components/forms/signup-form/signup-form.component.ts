@@ -50,14 +50,14 @@ export class SignupFormComponent implements OnInit {
         signUpAttempt.subscribe((userToken:signUpServerResponse) => {
             if (userToken){
               this.userAuthDataService.setToken(userToken.token)
-              this.signupUser.handleSignUpRequestSuccess()
+              this.signupUser.handleRequestSuccess()
               this.signUpForm.reset();
               this.router.navigate(['/']);
             }else{
-              this.signupUser.handleSignUpRequestError()
+              this.signupUser.handleRequestError()
             }
         }, (error)=>{
-          this.signupUser.handleSignUpRequestError()
+          this.signupUser.handleRequestError()
         })
        
       } else {
@@ -66,7 +66,7 @@ export class SignupFormComponent implements OnInit {
     }else{
       // set error if passwords are not equal
       this.signUpForm.setErrors({passwordsEqual:true})
-      this.signupUser.handleSignUpRequestError()
+      this.signupUser.handleRequestError()
 
     }
     
