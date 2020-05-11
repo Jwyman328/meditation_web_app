@@ -36,14 +36,14 @@ export class LoginFormComponent implements OnInit {
             localStorage.setItem('token',responseData.token)
             this.userAuthDataService.setToken(responseData.token);
             this.userAuthDataService.setUsername(postData.username)
-            this.loginUser.handleLoginRequestSuccess();
+            this.loginUser.handleRequestSuccess();
             this.route.navigate(['/']);
           } else {
-            this.loginUser.handleLoginRequestError();
+            this.loginUser.handleRequestError();
           }
         },
         (error) => {
-          this.loginUser.handleLoginRequestError();
+          this.loginUser.handleRequestError();
           console.log('error', error);
         }
       );
