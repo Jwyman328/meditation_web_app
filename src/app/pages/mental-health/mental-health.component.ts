@@ -38,9 +38,7 @@ export class MentalHealthComponent implements OnInit {
     this.choosenEmotion = emotion;
   };
 
-  setJournalText = ($event) => {
-    console.log($event, 'event');
-  };
+
 
   submitEmotion = () => {
     console.log(this.userAuthDataService.token, 'token');

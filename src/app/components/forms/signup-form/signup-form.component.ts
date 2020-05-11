@@ -56,7 +56,7 @@ export class SignupFormComponent implements OnInit {
             }else{
               this.signupUser.handleRequestError()
             }
-        }, (error)=>{
+        }, (error:string)=>{
           this.signupUser.handleRequestError()
         })
        
