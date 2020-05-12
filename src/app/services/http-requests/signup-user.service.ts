@@ -12,7 +12,7 @@ export class SignupUserService extends RequestSentStatus {
   }
 
 
-  postSignUpUser(signUpData: signUpDataModel): any {
+  postSignUpUser(signUpData: signUpDataModel) {
     this.handleRequestSent();
     return this.http.post(
       'https://intense-gorge-29567.herokuapp.com/sign_up',

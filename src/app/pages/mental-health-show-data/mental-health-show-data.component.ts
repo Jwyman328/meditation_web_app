@@ -19,10 +19,10 @@ export class MentalHealthShowDataComponent implements OnInit {
   today = new Date();
   graphWidth:number;
   @ViewChild('pageContainer') pageContainer:ElementRef;
-  dateOneMonthAgo: any = new Date(
+  dateOneMonthAgo: Date = new Date(
     new Date().setMonth(this.today.getMonth() - 1)
   );
-  dateOneWeekAgo: any = new Date(new Date().setDate(this.today.getDate() - 7));
+  dateOneWeekAgo: Date = new Date(new Date().setDate(this.today.getDate() - 7));
   graphTitle = `My Emotions: ${this.dateOneWeekAgo.toLocaleDateString()}-${this.today.toLocaleDateString()}`;
 
   backgroundImageUrl =
