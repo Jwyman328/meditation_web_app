@@ -23,6 +23,10 @@
         transform: scale(1.01);
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.858);
     }
+
+    &-title {
+        text-transform: uppercase;
+    }
     
 }
 
