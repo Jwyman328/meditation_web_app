@@ -4,19 +4,24 @@ import { createJournalPostModel } from '../../models/journalModels/createJournal
 import { RequestSentStatus } from './RequestSentStatusHandler/RequestSentStatusHandler';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CreateJournalService extends RequestSentStatus {
-
-
-  constructor(private http:HttpClient) {
+  constructor(private http: HttpClient) {
     super();
-   }
-
-  createJournal = (journalData:createJournalPostModel, token:string) => {
-    this.handleRequestSent();
-    return this.http.post(`https://intense-gorge-29567.herokuapp.com/Journal/all_user_entries`,journalData,
-    {headers: new HttpHeaders({ Authorization: `JWT ${token}`,'Content-Type': 'application/json'}) })
   }
 
+  createJournal = (journalData: createJournalPostModel, token: string) => {
+    this.handleRequestSent();
+    return this.http.post(
+      `https://intense-gorge-29567.herokuapp.com/Journal/all_user_entries`,
+      journalData,
+      {
+        headers: new HttpHeaders({
+          Authorization: `JWT ${token}`,
+          'Content-Type': 'application/json',
+        }),
+      }
+    );
+  };
 }

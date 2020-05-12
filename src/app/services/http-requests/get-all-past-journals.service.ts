@@ -11,7 +11,6 @@ export class GetAllPastJournalsService extends RequestSentStatus {
   }
 
   getAllPastJournals(token:string) {
-    console.log(token, 'tok')
     this.handleRequestSent();
     return this.http.get(
       'https://intense-gorge-29567.herokuapp.com/Journal/all_user_entries',
