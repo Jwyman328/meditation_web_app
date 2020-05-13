@@ -6,7 +6,7 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 let routerSpy;
-fdescribe('MeditationCourseCardComponent', () => {
+describe('MeditationCourseCardComponent', () => {
   let component: MeditationCourseCardComponent;
   let fixture: ComponentFixture<MeditationCourseCardComponent>;
 

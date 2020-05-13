@@ -1,14 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 
 import { MainNavBarComponent } from './main-nav-bar.component';
+import { UserAuthDataService } from '../../../services/userData/user-auth-data.service';
+import { NavLinkComponent } from '../nav-link/nav-link.component';
+import { By } from '@angular/platform-browser';
 
+let UserAuthDataServiceSpy;
 describe('MainNavBarComponent', () => {
   let component: MainNavBarComponent;
   let fixture: ComponentFixture<MainNavBarComponent>;
 
   beforeEach(async(() => {
+    UserAuthDataServiceSpy = jasmine.createSpyObj('UserAuthDataService',['logOutUser'])
     TestBed.configureTestingModule({
-      declarations: [ MainNavBarComponent ]
+      declarations: [ MainNavBarComponent, NavLinkComponent ],
+      providers: [{provide:UserAuthDataService, useValue: UserAuthDataServiceSpy}]//userAuthDataService
     })
     .compileComponents();
   }));
@@ -19,7 +25,44 @@ describe('MainNavBarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('UserAuthDataService logout method hit when Logout nav clicked', () => {  //
+    component.isMobileHeader = false;
+
+    const logOutNavLink:HTMLElement = fixture.debugElement.query(By.css('.log-out-click')).nativeElement;
+    logOutNavLink.click();
+    expect(UserAuthDataServiceSpy.logOutUser.calls.count()).toEqual(1)
   });
+
+  it('modal button click changes header open or closed', () => {  //
+    component.isMobileHeader = true;
+    fixture.detectChanges();
+    //header starts closed
+    expect(component.isHeaderOpen).toBeFalse()
+
+    const modalButtonElement:HTMLElement = fixture.debugElement.query(By.css('.modalButton')).nativeElement
+    modalButtonElement.click();
+    expect(component.isHeaderOpen).toBeTrue()
+  });
+
+  it('hide all A tag elements when mobile header is closed', () => {
+    component.isMobileHeader = true;
+    fixture.detectChanges();
+    //header starts closed
+    component.isHeaderOpen = false
+    fixture.detectChanges();
+   //const modalButtonElement:HTMLElement = fixture.debugElement.query(By.css('.modalButton')).nativeElement
+   const fixtureHtmlElement:HTMLElement = fixture.nativeElement;
+   const totalLinkATagsBeingDisplayed = fixtureHtmlElement.querySelectorAll('a').length
+    expect(totalLinkATagsBeingDisplayed).toEqual(0)
+  })
+  it('show all four A tag elements when mobile header is open', () => {
+    component.isMobileHeader = true;
+    fixture.detectChanges();
+    component.isHeaderOpen = true
+    fixture.detectChanges();
+   const fixtureHtmlElement:HTMLElement = fixture.nativeElement;
+   const totalLinkATagsBeingDisplayed = fixtureHtmlElement.querySelectorAll('a').length
+    expect(totalLinkATagsBeingDisplayed).toEqual(4)
+  })
+
 });
