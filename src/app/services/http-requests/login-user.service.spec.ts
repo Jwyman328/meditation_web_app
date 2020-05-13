@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, fakeAsync } from '@angular/core/testing';
 
 import { LoginUserService } from './login-user.service';
 import { loginUserPostDataMock } from '../../../testing/TestHelpers/mockedData/loginUserPostDataMock';
@@ -14,23 +14,23 @@ describe('LoginUserService', () => {
     service = new LoginUserService(<any>httpClientSpy)
   });
 
-  it('should return mock token on post request', () => {
+  it('should return mock token on post request', fakeAsync( () => {
     httpClientSpy.post.and.returnValue(asyncData({token:'mock token'}))
     service.postLoginUser(loginUserPostDataMock).subscribe((response:loginResponseModel) => {
       expect(response.token).toEqual('mock token')
     })
-  }); 
+  })); 
 
-  it('should have correct request state status on post request.', () => {
+  it('should have correct request state status on post request.', fakeAsync(() => {
     httpClientSpy.post.and.returnValue(asyncData({token:'mock token'}))
     service.postLoginUser(loginUserPostDataMock).subscribe((response:loginResponseModel) => {
       expect(service.isError).toBeFalse();
       expect(service.isLoading).toBeTrue();
       expect(service.isSuccess).toBeFalse()
     })
-  })
+  }))
 
-  it('should have correct request state status on post request success handle.', () => {
+  it('should have correct request state status on post request success handle.', fakeAsync(() => {
     httpClientSpy.post.and.returnValue(asyncData({token:'mock token'}))
     service.postLoginUser(loginUserPostDataMock).subscribe((response:loginResponseModel) => {
       service.handleRequestSuccess()
@@ -38,8 +38,8 @@ describe('LoginUserService', () => {
       expect(service.isLoading).toBeFalse();
       expect(service.isSuccess).toBeTrue();
     })
-  })
-  it('should have correct request state status on post request error handle.', () => {
+  }))
+  it('should have correct request state status on post request error handle.', fakeAsync(() => {
     httpClientSpy.post.and.returnValue(asyncData({token:'mock token'}))
     service.postLoginUser(loginUserPostDataMock).subscribe((response:loginResponseModel) => {
       service.handleRequestError();
@@ -47,5 +47,5 @@ describe('LoginUserService', () => {
       expect(service.isLoading).toBeFalse();
       expect(service.isSuccess).toBeFalse();
     })
-  })
+  }))
 });

@@ -1,4 +1,4 @@
-import { TestBed, async,  } from '@angular/core/testing';
+import { TestBed, async,  fakeAsync } from '@angular/core/testing';
 import { CreateJournalService } from './create-journal.service';
 import { asyncData } from 'src/testing/TestHelpers/async-observable-helper';
 import { createJournalDataMock } from 'src/testing/TestHelpers/mockedData/createJournalDataMock';
@@ -13,14 +13,14 @@ describe('CreateJournalService', () => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['post']);
     service = new CreateJournalService(<any>httpClientSpy);
   });
-  it('should return journal created success message on http response', () => {
+  it('should return journal created success message on http response', fakeAsync(() => {
     httpClientSpy.post.and.returnValue(asyncData('Journal Created'));
     service.createJournal(createJournalDataMock,'token').subscribe((response)=>{
       expect(response).toBe('Journal Created')
     });
-  });
+  }));
 
-  it('should change service http status state correctly on success call', () => {
+  it('should change service http status state correctly on success call', fakeAsync(() => {
     httpClientSpy.post.and.returnValue(asyncData('Journal Created'));
     service.createJournal(createJournalDataMock,'token').subscribe((response)=>{
       expect(service.isLoading).toBeTrue();
@@ -31,9 +31,9 @@ describe('CreateJournalService', () => {
       expect(service.isLoading).toBeFalse();
       expect(service.isError).toBeFalse();
     });
-  });
+  }));
 
-  it('should change service http status state correctly on handle request error call ', () => {
+  it('should change service http status state correctly on handle request error call ', fakeAsync(() => {
     httpClientSpy.post.and.returnValue(asyncData(throwError('error')))
     service.createJournal(createJournalDataMock,'token').subscribe((successResponse)=>{
       service.handleRequestError()
@@ -42,5 +42,5 @@ describe('CreateJournalService', () => {
       expect(service.isError).toBeTrue();
     });
   
-});
+}));
 })
