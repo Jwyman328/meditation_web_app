@@ -5,14 +5,15 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
+import { routeNavigateSpy } from '../../../testing/TestHelpers/spys/routingNavigateSpy';
 
 let routerSpy;
-fdescribe('IndividualMeditationClickableRowComponent', () => {
+describe('IndividualMeditationClickableRowComponent', () => {
   let component: IndividualMeditationClickableRowComponent;
   let fixture: ComponentFixture<IndividualMeditationClickableRowComponent>;
 
   beforeEach(async(() => {
-    routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+    routerSpy =  jasmine.createSpyObj('Router', ['navigate']);
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [IndividualMeditationClickableRowComponent],

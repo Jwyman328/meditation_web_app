@@ -1,0 +1,1 @@
+export const routeNavigateSpy = jasmine.createSpyObj('Router', ['navigate']);
