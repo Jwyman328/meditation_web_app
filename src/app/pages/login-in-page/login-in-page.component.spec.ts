@@ -39,15 +39,4 @@ describe('LoginInPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should show guest user access ', () => {
-    const element: HTMLElement = fixture.debugElement.nativeElement
-    /* const pp = fixture.debugElement.queryAll(By.css('p'));
-    console.log(pp, 'pp'); */
-    console.log(element.textContent)
-    expect(element.querySelectorAll('p')[0].textContent).toEqual('Guest email: guestUser@test.com')
-    expect(element.querySelectorAll('p')[1].textContent).toEqual('Guest password: testuser123')
-
-    
-    //expect(component).toBeTruthy(); 
-  });
 });

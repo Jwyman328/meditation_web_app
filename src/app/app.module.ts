@@ -35,6 +35,7 @@ import { PastJournalsComponent } from './pages/past-journals/past-journals.compo
 import { ErrorMessageComponent } from './components/messages/error-message/error-message.component';
 import { MobileHeaderButtonComponent } from './components/buttons/mobile-header-button/mobile-header-button.component';
 import { MeditationBreatheCircleComponent } from './components/meditation-breathe-circle/meditation-breathe-circle.component';
+import { GuestUserInfoComponent } from './components/guest-user-info/guest-user-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import { MeditationBreatheCircleComponent } from './components/meditation-breath
     ErrorMessageComponent,
     MobileHeaderButtonComponent,
     MeditationBreatheCircleComponent,
+    GuestUserInfoComponent,
     
     
   ],

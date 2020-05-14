@@ -1,10 +1,7 @@
 <div class="page-container">
   <app-background-image [url]="backgroundImageUrl"></app-background-image>
   <app-auth-card>
-    <div class="guest-user-container">
-      <p>Guest email: guestUser@test.com</p>
-      <p>Guest password: testuser123</p>
-    </div>
+    <app-guest-user-info></app-guest-user-info>
     <app-page-header [headerText]="'Meditation Login'"></app-page-header>
 
     <app-login-form></app-login-form>
