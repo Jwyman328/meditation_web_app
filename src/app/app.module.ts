@@ -36,6 +36,7 @@ import { ErrorMessageComponent } from './components/messages/error-message/error
 import { MobileHeaderButtonComponent } from './components/buttons/mobile-header-button/mobile-header-button.component';
 import { MeditationBreatheCircleComponent } from './components/meditation-breathe-circle/meditation-breathe-circle.component';
 import { GuestUserInfoComponent } from './components/guest-user-info/guest-user-info.component';
+import { SubmitEmotionButtonComponent } from './components/buttons/submit-emotion-button/submit-emotion-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { GuestUserInfoComponent } from './components/guest-user-info/guest-user-
     MobileHeaderButtonComponent,
     MeditationBreatheCircleComponent,
     GuestUserInfoComponent,
+    SubmitEmotionButtonComponent,
     
     
   ],

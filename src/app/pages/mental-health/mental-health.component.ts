@@ -5,6 +5,7 @@ import {
   ElementRef,
   AfterViewInit,
   DoCheck,
+  OnChanges,
 } from '@angular/core';
 import { CreateJournalService } from '../../services/http-requests/create-journal.service';
 import { UserAuthDataService } from '../../services/userData/user-auth-data.service';
@@ -12,6 +13,7 @@ import { emotionTextToNumberValue } from './helper_functions/returnNumberFromEmo
 import { createTodaysFormatedDate } from './helper_functions/createTodaysFormatedDate';
 import { formatJournalPostData } from './helper_functions/formatJournalPostData';
 import { Router } from '@angular/router';
+import { MentalHealthComponentStateService } from '../../services/componentSharing/mental-health-component-state.service';
 
 @Component({
   selector: 'app-mental-health',
@@ -22,46 +24,28 @@ export class MentalHealthComponent implements OnInit {
   backgroundImage =
     'https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500';
 
-  choosenEmotion = 'neutral';
+  choosenEmotion;
   todayDate = new Date();
-  journalText: string = '';
+  journalText;
 
   constructor(
     public createJournalService: CreateJournalService,
     private userAuthDataService: UserAuthDataService,
+    private mentalHealthComponentStateService: MentalHealthComponentStateService,
     private route: Router
   ) {}
 
-  ngOnInit(): void {}
-
-  setEmotion = (emotion: string) => {
-    this.choosenEmotion = emotion;
-  };
-
-  submitEmotion = () => {
-    const journalPostData = formatJournalPostData(
-      this.choosenEmotion,
-      this.journalText
-    );
-
-    const createJournalPostRequest = this.createJournalService.createJournal(
-      journalPostData,
-      this.userAuthDataService.getToken()
-    );
-
-    createJournalPostRequest.subscribe(
-      (response) => {
-        console.log(response);
-        this.createJournalService.handleRequestSuccess();
-        this.journalText = '';
-        // route back to main journal page
-        this.route.navigate(['mental-health']);
-      },
-      (error) => {
-        console.log(error);
-        this.createJournalService.handleRequestError();
+  ngOnInit(): void {
+    const choosenEmotionService = this.mentalHealthComponentStateService.choosenEmotion.subscribe(
+      (choosenEmotionValue) => {
+        this.choosenEmotion = choosenEmotionValue;
       }
     );
-    console.log('submitted boy');
-  };
+    const journalTextService = this.mentalHealthComponentStateService.journalText.subscribe(
+      (journalTextValue) => {
+        this.journalText = journalTextValue;
+      }
+    );
+  }
+  
 }

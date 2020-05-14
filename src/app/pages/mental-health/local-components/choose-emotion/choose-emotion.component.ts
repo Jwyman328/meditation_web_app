@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MentalHealthComponentStateService } from '../../../../services/componentSharing/mental-health-component-state.service';
 
 @Component({
   selector: 'app-choose-emotion',
@@ -8,11 +9,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ChooseEmotionComponent implements OnInit {
 
   @Input('emotionTitleText') emotionTitleText:string;
-  @Input('setEmotion')       setEmotion: (emotion:string) => void;
-  constructor() { }
+  constructor(private mentalHealthComponentStateService: MentalHealthComponentStateService) { }
 
   ngOnInit(): void {
   }
+
+  setEmotion = (emotion: string) => {
+    this.mentalHealthComponentStateService.choosenEmotion.next(emotion)
+  };
 
 }
  
