@@ -1,7 +1,7 @@
 <app-main-nav-bar [isMeditationContainer]='true'></app-main-nav-bar>
 <div class="page-container">
-  <app-page-header [headerText]="'meditation'"></app-page-header>
-  <img class="meditation-course-img" [src]="courseData.photo_url" />
+  <app-page-header [headerText]="courseTitle"></app-page-header>
+  <app-background-image [url]='courseData.photo_url'></app-background-image>
   <div class="medition-items-container">
     <app-individual-meditation-clickable-row
       *ngFor="let individualMeditation of individualMeditations"
