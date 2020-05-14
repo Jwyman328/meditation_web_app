@@ -1,0 +1,39 @@
+
+.big-circle-breath {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vw;
+    min-height: 200px;
+    min-width: 200px;
+    width: 30vw;
+    border-radius: 50%;
+    opacity: .8;
+    background: linear-gradient(to bottom, #667db6,#0082c8,#0082c8,#667db6);
+    animation-name: breathAnimation;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-color: rgba(0, 0, 0, 0.413);
+    border-style: solid;
+}
+
+
+.breath-text {
+    font-size: x-large;
+    text-transform: uppercase;
+}
+
+@keyframes breathAnimation {
+    0%{
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.2);
+
+    }
+    100% {
+        transform: scale(1);
+    }
+}

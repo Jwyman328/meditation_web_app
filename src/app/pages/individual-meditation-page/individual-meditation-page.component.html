@@ -4,11 +4,7 @@
 
     <app-background-image [url]="meditationPhotoUrl"></app-background-image>
 
-    <div class='big-circle-breath'>
-        <h1 class='breath-text'>
-            Breathe
-        </h1>
-    </div>
+    <app-meditation-breathe-circle></app-meditation-breathe-circle>
     <audio controls   class='audioPlayer' #audioElement>
         <source type="audio/mpeg" [src]="meditationAudioUrl"> 
     </audio>

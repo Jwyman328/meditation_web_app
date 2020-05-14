@@ -7,7 +7,7 @@ import { By } from '@angular/platform-browser';
 import { MobileHeaderButtonComponent } from '../../buttons/mobile-header-button/mobile-header-button.component';
 
 let UserAuthDataServiceSpy;
-fdescribe('MainNavBarComponent', () => {
+describe('MainNavBarComponent', () => {
   let component: MainNavBarComponent;
   let fixture: ComponentFixture<MainNavBarComponent>;
 
