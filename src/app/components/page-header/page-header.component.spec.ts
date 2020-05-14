@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageHeaderComponent } from './page-header.component';
+import { By } from '@angular/platform-browser';
 
 describe('PageHeaderComponent', () => {
   let component: PageHeaderComponent;
@@ -19,7 +20,10 @@ describe('PageHeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should display header text input', () => {
+    component.headerText = 'test header';
+    fixture.detectChanges();
+    let headerElement:HTMLElement = fixture.debugElement.query(By.css('.page-header')).nativeElement
+    expect(headerElement.textContent).toEqual('test header');
   });
 });
