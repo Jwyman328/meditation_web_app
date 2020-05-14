@@ -29,20 +29,16 @@ export class MentalHealthComponent implements OnInit {
   constructor(
     public createJournalService: CreateJournalService,
     private userAuthDataService: UserAuthDataService,
-    private route:Router
+    private route: Router
   ) {}
 
   ngOnInit(): void {}
 
-  setEmotion = (emotion:string) => {
+  setEmotion = (emotion: string) => {
     this.choosenEmotion = emotion;
   };
 
-
-
   submitEmotion = () => {
-    console.log(this.userAuthDataService.token, 'token');
-
     const journalPostData = formatJournalPostData(
       this.choosenEmotion,
       this.journalText
@@ -59,7 +55,7 @@ export class MentalHealthComponent implements OnInit {
         this.createJournalService.handleRequestSuccess();
         this.journalText = '';
         // route back to main journal page
-        this.route.navigate(['mental-health'])
+        this.route.navigate(['mental-health']);
       },
       (error) => {
         console.log(error);

@@ -19,7 +19,7 @@ describe('IndividualMeditationCoursePageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should use image of courseData image', () => {
     expect(component).toBeTruthy();
   });
 });

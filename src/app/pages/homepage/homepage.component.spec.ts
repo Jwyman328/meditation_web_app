@@ -4,7 +4,7 @@ import { HomepageComponent } from './homepage.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
-fdescribe('HomepageComponent', () => {
+describe('HomepageComponent', () => {
   let component: HomepageComponent;
   let fixture: ComponentFixture<HomepageComponent>;
 
@@ -27,5 +27,5 @@ fdescribe('HomepageComponent', () => {
     const suggestMeditationTitle:HTMLElement = fixture.debugElement.query(By.css('.suggest-meditation-title')).nativeElement
     expect(suggestMeditationTitle.textContent).toEqual('Suggested Meditation');
   });
-  
+
 });

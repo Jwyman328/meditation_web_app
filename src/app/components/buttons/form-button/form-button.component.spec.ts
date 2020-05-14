@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormButtonComponent } from './form-button.component';
+import { By } from '@angular/platform-browser';
 
-describe('FormButtonComponent', () => {
+fdescribe('FormButtonComponent', () => {
   let component: FormButtonComponent;
   let fixture: ComponentFixture<FormButtonComponent>;
 
@@ -19,7 +20,8 @@ describe('FormButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('shots submit text', () => {
+    const buttonElement: HTMLElement = fixture.debugElement.query(By.css('.submit-button')).nativeElement;
+    expect(buttonElement.textContent).toEqual('submit');
   });
 });
