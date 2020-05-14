@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormButtonComponent } from './form-button.component';
 import { By } from '@angular/platform-browser';
 
-fdescribe('FormButtonComponent', () => {
+describe('FormButtonComponent', () => {
   let component: FormButtonComponent;
   let fixture: ComponentFixture<FormButtonComponent>;
 
