@@ -7,7 +7,7 @@ import { randomMeditationCourseMock } from '../../../testing/TestHelpers/mockedD
 import { Router } from '@angular/router';
 
 let routeSpy;
-fdescribe('SuggestedMeditationComponent', () => {
+describe('SuggestedMeditationComponent', () => {
   let component: SuggestedMeditationComponent;
   let fixture: ComponentFixture<SuggestedMeditationComponent>;
 
