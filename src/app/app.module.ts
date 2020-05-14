@@ -32,6 +32,7 @@ import { MentalHealthShowDataComponent } from './pages/mental-health-show-data/m
 import { BeautifulChartsModule } from 'ngx-beautiful-charts';
 import { SuggestedMeditationComponent } from './components/suggested-meditation/suggested-meditation.component';
 import { PastJournalsComponent } from './pages/past-journals/past-journals.component';
+import { ErrorMessageComponent } from './components/messages/error-message/error-message.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { PastJournalsComponent } from './pages/past-journals/past-journals.compo
     MentalHealthShowDataComponent,
     SuggestedMeditationComponent,
     PastJournalsComponent,
+    ErrorMessageComponent,
     
     
   ],

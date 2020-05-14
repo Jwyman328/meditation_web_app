@@ -12,11 +12,7 @@
     formControlName="password"
   />
   <app-form-button [handleSubmit]="handleLoginSubmit"></app-form-button>
-  <p *ngIf="loginForm.invalid && loginForm.touched" class="error-msg">
-    Username or password is invalid
-  </p>
-  <p class="error-msg" *ngIf='loginUser.isError'>
-    Username and password are not registered
-  </p>
+  <app-error-message  *ngIf="loginForm.invalid && loginForm.touched" [errorMsgText]='"Username or password is invalid"' ></app-error-message>
+  <app-error-message  *ngIf='loginUser.isError' [errorMsgText]='"Username and password are not registered"' ></app-error-message>
 </form>
  <app-spinner [isSpinning]='loginUser.isLoading'></app-spinner>
