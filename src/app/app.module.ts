@@ -33,6 +33,7 @@ import { BeautifulChartsModule } from 'ngx-beautiful-charts';
 import { SuggestedMeditationComponent } from './components/suggested-meditation/suggested-meditation.component';
 import { PastJournalsComponent } from './pages/past-journals/past-journals.component';
 import { ErrorMessageComponent } from './components/messages/error-message/error-message.component';
+import { MobileHeaderButtonComponent } from './components/buttons/mobile-header-button/mobile-header-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +61,7 @@ import { ErrorMessageComponent } from './components/messages/error-message/error
     SuggestedMeditationComponent,
     PastJournalsComponent,
     ErrorMessageComponent,
+    MobileHeaderButtonComponent,
     
     
   ],

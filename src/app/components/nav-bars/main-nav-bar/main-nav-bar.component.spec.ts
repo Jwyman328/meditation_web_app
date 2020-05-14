@@ -4,16 +4,17 @@ import { MainNavBarComponent } from './main-nav-bar.component';
 import { UserAuthDataService } from '../../../services/userData/user-auth-data.service';
 import { NavLinkComponent } from '../nav-link/nav-link.component';
 import { By } from '@angular/platform-browser';
+import { MobileHeaderButtonComponent } from '../../buttons/mobile-header-button/mobile-header-button.component';
 
 let UserAuthDataServiceSpy;
-describe('MainNavBarComponent', () => {
+fdescribe('MainNavBarComponent', () => {
   let component: MainNavBarComponent;
   let fixture: ComponentFixture<MainNavBarComponent>;
 
   beforeEach(async(() => {
     UserAuthDataServiceSpy = jasmine.createSpyObj('UserAuthDataService',['logOutUser'])
     TestBed.configureTestingModule({
-      declarations: [ MainNavBarComponent, NavLinkComponent ],
+      declarations: [ MainNavBarComponent, NavLinkComponent, MobileHeaderButtonComponent ],
       providers: [{provide:UserAuthDataService, useValue: UserAuthDataServiceSpy}]//userAuthDataService
     })
     .compileComponents();

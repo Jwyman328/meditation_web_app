@@ -36,7 +36,7 @@ export class MainNavBarComponent implements OnInit {
     this.setHeaderBasedOffPageWidth()
   }
 
-  openCloseHeader() {
+  openCloseHeader = () => {
     this.isHeaderOpen = !this.isHeaderOpen;
     this.cdr.detectChanges();
   }
