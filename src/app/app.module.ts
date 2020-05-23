@@ -37,6 +37,7 @@ import { MobileHeaderButtonComponent } from './components/buttons/mobile-header-
 import { MeditationBreatheCircleComponent } from './components/meditation-breathe-circle/meditation-breathe-circle.component';
 import { GuestUserInfoComponent } from './components/guest-user-info/guest-user-info.component';
 import { SubmitEmotionButtonComponent } from './components/buttons/submit-emotion-button/submit-emotion-button.component';
+import { SetGraphTypeButtonComponent } from './components/buttons/set-graph-type-button/set-graph-type-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { SubmitEmotionButtonComponent } from './components/buttons/submit-emotio
     MeditationBreatheCircleComponent,
     GuestUserInfoComponent,
     SubmitEmotionButtonComponent,
+    SetGraphTypeButtonComponent,
     
     
   ],
