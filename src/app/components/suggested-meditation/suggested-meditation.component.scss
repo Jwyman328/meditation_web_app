@@ -18,7 +18,7 @@
     transition: all 1s;
 
 
-    &-photo {
+    &__photo {
         position: absolute;
         top:0;
         left:0;
@@ -36,7 +36,7 @@
         }
     }
 
-    &-title {
+    &__title {
         color: white;
         font-weight: 800;
         font-size: xx-large;

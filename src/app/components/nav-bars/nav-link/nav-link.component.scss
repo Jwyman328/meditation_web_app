@@ -1,17 +1,18 @@
-.link-text {
-    font-size: larger;
-    font-weight: 600;
-    color:darken(#2a9d8f, 10%);
-    transition: all .3s;
-    text-transform: uppercase;
-
-    &:hover{
-        transform: scale(1.1);
-        color: grey
-        //box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.646);
-    }
-}
 
 .link {
     text-decoration: none;
+
+    &__text {
+        font-size: larger;
+        font-weight: 600;
+        color:darken(#2a9d8f, 10%);
+        transition: all .3s;
+        text-transform: uppercase;
+    
+        &:hover{
+            transform: scale(1.1);
+            color: grey
+        }
+    }
+    
 }

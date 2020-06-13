@@ -26,21 +26,20 @@
         box-shadow: 4px 4px 4px $color-hover-shadow-black;
     }
 
-    &-title {
+    &__title {
         text-transform: uppercase;
     }
-    
-}
 
-.meditation-number-circle {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-style: solid;
-    border-color: black;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(to bottom, $color-primary-purple-blue,$color-primary-blue,);
+    &__number-circle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-style: solid;
+        border-color: black;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(to bottom, $color-primary-purple-blue,$color-primary-blue,);
+    }
 }

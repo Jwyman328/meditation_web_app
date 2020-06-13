@@ -29,7 +29,7 @@ describe('MainNavBarComponent', () => {
   it('UserAuthDataService logout method hit when Logout nav clicked', () => {  //
     component.isMobileHeader = false;
 
-    const logOutNavLink:HTMLElement = fixture.debugElement.query(By.css('.log-out-click')).nativeElement;
+    const logOutNavLink:HTMLElement = fixture.debugElement.query(By.css('.nav-container__logout')).nativeElement;
     logOutNavLink.click();
     expect(UserAuthDataServiceSpy.logOutUser.calls.count()).toEqual(1)
   });

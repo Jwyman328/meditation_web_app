@@ -1,5 +1,5 @@
 <nav
-  [ngClass]="{'nav-container-meditation':isMeditationContainer, 'nav-container':!isMeditationContainer}"
+  [ngClass]="{'nav-container--meditation':isMeditationContainer, 'nav-container':!isMeditationContainer}"
   #navContainerElement
 >
 
@@ -15,7 +15,7 @@
         [routeUrl]="'/mental-health'"
         [linkName]="'mental-health'"
       ></app-nav-link>
-      <app-nav-link class='log-out-click' (click)='handleLogout()' [linkName]="'Logout'"></app-nav-link>
+      <app-nav-link class='nav-container__logout' (click)='handleLogout()' [linkName]="'Logout'"></app-nav-link>
     </div>
     <app-mobile-header-button *ngIf='isMobileHeader' [openCloseHeader]="openCloseHeader"></app-mobile-header-button>
   </div>

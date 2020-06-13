@@ -18,13 +18,13 @@
     animation-timing-function: linear;
     border-color: rgba(0, 0, 0, 0.413);
     border-style: solid;
+
+    &__text {
+        font-size: x-large;
+        text-transform: uppercase;
+    }
 }
 
-
-.breath-text {
-    font-size: x-large;
-    text-transform: uppercase;
-}
 
 @keyframes breathAnimation {
     0%{
