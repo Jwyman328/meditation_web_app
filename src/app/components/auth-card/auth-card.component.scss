@@ -1,3 +1,5 @@
+@import "../../../styles/global/colors";
+
 .auth-card-container {
     display: flex;
     flex-direction: column;
@@ -11,13 +13,13 @@
     border-color: black;
     border-style: solid;
     border-width: 2px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.81);
+    box-shadow: 5px 5px 5px $color-neutral-shadow-black;
     transition: all .3s;
     padding: 20px;
     margin-top: 50px;
 
     &:hover {
         transform: scale(1.02);
-        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.858);
+        box-shadow: 7px 7px 7px $color-hover-shadow-black;
     }
 }

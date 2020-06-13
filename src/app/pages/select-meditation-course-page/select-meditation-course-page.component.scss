@@ -1,8 +1,10 @@
+@import '../../../styles/global/colors';
+
 .all-meditations-page-container {
     width: 100vw;
     min-height: 100vh ;
     height: auto;
-    background: linear-gradient(to bottom, #667db6,#0082c8,#0082c8,#667db6);
+    background: linear-gradient(to bottom, $color-primary-purple-blue,$color-primary-blue,$color-primary-blue,$color-primary-purple-blue);
     display: flex;
     flex-direction: column;
     align-items: center;

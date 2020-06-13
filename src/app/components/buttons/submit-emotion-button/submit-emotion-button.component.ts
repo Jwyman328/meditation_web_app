@@ -8,7 +8,7 @@ import { MentalHealthComponentStateService } from '../../../services/componentSh
 @Component({
   selector: 'app-submit-emotion-button',
   templateUrl: './submit-emotion-button.component.html',
-  styleUrls: ['./submit-emotion-button.component.scss']
+  styleUrls: ['./submit-emotion-button.component.scss', '../form-button/form-button.component.scss']
 })
 export class SubmitEmotionButtonComponent implements OnInit {
   @Input('choosenEmotion') choosenEmotion;
