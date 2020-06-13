@@ -55,21 +55,22 @@
     }
 }
 
-.graphTitleContainer {
+.graphTitle {
     position: relative;
     margin-top: 350px;
     text-align: center;
 
+    &__text {
+        justify-self: center;
+        position: static;
+    
+        display: block;
+        text-transform: uppercase;
+        font-weight: 800;
+        text-align: center;
+       
+    }
+
 
 }
 
-.graphTitle {
-    justify-self: center;
-    position: static;
-
-    display: block;
-    text-transform: uppercase;
-    font-weight: 800;
-    text-align: center;
-   
-}

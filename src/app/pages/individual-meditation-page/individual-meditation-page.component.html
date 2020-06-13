@@ -1,11 +1,11 @@
-<app-main-nav-bar [isMeditationContainer]='true'></app-main-nav-bar>
-<div class='page-container' >
-        <app-page-header [headerText]="meditationTitle"></app-page-header>
+<app-main-nav-bar [isMeditationContainer]="true"></app-main-nav-bar>
+<div class="page-container">
+  <app-page-header [headerText]="meditationTitle"></app-page-header>
 
-    <app-background-image [url]="meditationPhotoUrl"></app-background-image>
+  <app-background-image [url]="meditationPhotoUrl"></app-background-image>
 
-    <app-meditation-breathe-circle></app-meditation-breathe-circle>
-    <audio controls   class='audioPlayer' #audioElement>
-        <source type="audio/mpeg" [src]="meditationAudioUrl"> 
-    </audio>
+  <app-meditation-breathe-circle></app-meditation-breathe-circle>
+  <audio controls class="audioPlayer" #audioElement>
+    <source type="audio/mpeg" [src]="meditationAudioUrl" />
+  </audio>
 </div>

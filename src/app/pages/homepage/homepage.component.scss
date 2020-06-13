@@ -28,24 +28,26 @@
     grid-template-rows: 1fr 1fr;
 
 }
-.suggested-meditation-container {
+.suggested-meditation {
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    &__title {
+        font-size: xx-large;
+        margin-bottom: 15px;
+        margin-top: 30px;
+        font-weight: 800;
+        line-height: 40px;
+        color:white;
+        width: 90vw;
+        text-align: center;
+    }
    
 }
 
-.suggest-meditation-title {
-    font-size: xx-large;
-    margin-bottom: 15px;
-    margin-top: 30px;
-    font-weight: 800;
-    line-height: 40px;
-    color:white;
-    width: 90vw;
-    text-align: center;
-}
+
 
 .navigate-button-container {
     display:flex;
