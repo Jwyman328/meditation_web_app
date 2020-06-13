@@ -1,24 +1,24 @@
 <form *ngIf="!signupUser.isLoading" [formGroup]="signUpForm" class="auth-form">
   <input
     formControlName="firstName"
-    class="auth-form-input"
+    class="auth-form__input"
     placeholder="First Name"
   />
   <input
     formControlName="lastName"
-    class="auth-form-input"
+    class="auth-form__input"
     placeholder="Last Name"
   />
-  <input formControlName="email" class="auth-form-input" placeholder="Email" />
+  <input formControlName="email" class="auth-form__input" placeholder="Email" />
   <input
     formControlName="password"
-    class="auth-form-input"
+    class="auth-form__input"
     placeholder="Password"
     type="password"
   />
   <input
     formControlName="repeatPassword"
-    class="auth-form-input"
+    class="auth-form__input"
     placeholder="Repeat Password"
     type="password"
   />
