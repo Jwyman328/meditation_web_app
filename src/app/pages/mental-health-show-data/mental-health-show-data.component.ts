@@ -19,19 +19,19 @@ import { MentalHealthShowDataStateService } from '../../services/componentSharin
   styleUrls: ['./mental-health-show-data.component.scss'],
 })
 export class MentalHealthShowDataComponent implements OnInit {
-  monthData: individualGraphDataPoint[];
-  weekData: individualGraphDataPoint[];
+  monthData: individualGraphDataPoint[] = [];
+  weekData: individualGraphDataPoint[] = [];
   graphData = this.monthData;
   currentGraph = 'month';
   today = new Date();
   
-  graphWidth: number;
+  graphWidth: number = 500;
   @ViewChild('pageContainer') pageContainer: ElementRef;
   dateOneMonthAgo: Date = new Date(
     new Date().setMonth(this.today.getMonth() - 1)
   );
   dateOneWeekAgo: Date = new Date(new Date().setDate(this.today.getDate() - 7));
-  graphTitle; //`My Emotions: ${this.dateOneWeekAgo.toLocaleDateString()}-${this.today.toLocaleDateString()}`;
+  graphTitle = `My Emotions: ${this.dateOneWeekAgo.toLocaleDateString()}-${this.today.toLocaleDateString()}`; //`My Emotions: ${this.dateOneWeekAgo.toLocaleDateString()}-${this.today.toLocaleDateString()}`;
 
   backgroundImageUrl =
     'https://images.pexels.com/photos/158827/field-corn-air-frisch-158827.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500';
@@ -43,7 +43,7 @@ export class MentalHealthShowDataComponent implements OnInit {
   ) {}
 
   ngAfterViewInit() {
-    this.graphWidth = this.pageContainer.nativeElement.offsetWidth * 0.8;
+    this.graphWidth = this.pageContainer.nativeElement.offsetWidth * 0.6;
   }
 
 

@@ -3,14 +3,14 @@
   <app-background-image [url]="backgroundImageUrl"></app-background-image>
 
   <div class='element-container'>
-    <div class='graphTitleContainer'>
-      <h1 class='graphTitle'>{{graphTitle}}</h1>
+    <div class='graphTitle'>
+      <h1 class='graphTitle__text'>{{graphTitle}}</h1>
       <ngx-line-graph
         class="line-graph"
         [width]="graphWidth"
         [height]="400"
-        [minX]="0"
-        [maxX]="graphData.length -1"
+        [minX]=""
+        [maxX]="graphData.length"
         [minY]="0"
         [maxY]="4"
         [gridPrecisionX]="100"

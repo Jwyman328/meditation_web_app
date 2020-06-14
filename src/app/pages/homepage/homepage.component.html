@@ -3,12 +3,12 @@
   <app-background-image [url]="backgroundImageUrl"></app-background-image>
 
   <div class='page-elements'>
-    <div class='suggested-meditation-container'>
-      <p class='suggest-meditation-title'>Suggested Meditation</p>
+    <div class='suggested-meditation'>
+      <p class='suggested-meditation__title'>Suggested Meditation</p>
       <app-suggested-meditation></app-suggested-meditation>
     </div>
   
-    <div>
+    <div class='navigate-button-container'>
       <app-navigate-to-page-button [navigatePageText]="'How Are You Feeling?'" [route]='"create-journal-entry"'></app-navigate-to-page-button>
     </div>
   </div>

@@ -16,7 +16,7 @@ import { signUpServerResponse } from '../../../models/http-responses/signUpServe
 @Component({
   selector: 'app-signup-form',
   templateUrl: './signup-form.component.html',
-  styleUrls: ['./signup-form.component.scss'],
+  styleUrls: ['./signup-form.component.scss','../styles/auth_form.scss'],
 })
 export class SignupFormComponent implements OnInit {
   signUpForm = new FormGroup({

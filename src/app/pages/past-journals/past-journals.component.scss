@@ -1,3 +1,5 @@
+@import "../../../styles/global/colors";
+
 .page-container {
   width: auto;
   min-height: 90vh;
@@ -19,12 +21,12 @@
   opacity: 0.8;
   margin-top: 20px;
 
-  &-top-header {
+  &__header {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #0082c8;
+    background-color: $color-primary-blue;
     height: 30%;
     font-size: x-large;
 
@@ -34,7 +36,7 @@
     text-transform: uppercase;
   }
 
-  &-text {
+  &__text {
     color: black;
     font-size: large;
     margin: 7px;
@@ -43,12 +45,12 @@
     word-break: break-all;
   }
 
-  &-date {
+  &__date {
     height: 50%;
     margin-top: 10px;
   }
 
-  &-emotion {
+  &__emotion {
     height: 50%;
     margin-top: 10px;
   }

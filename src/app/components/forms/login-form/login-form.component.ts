@@ -8,7 +8,7 @@ import { UserAuthDataService } from '../../../services/userData/user-auth-data.s
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss'],
+  styleUrls: ['./login-form.component.scss','../styles/auth_form.scss'],
 })
 export class LoginFormComponent implements OnInit {
   loginForm = new FormGroup({

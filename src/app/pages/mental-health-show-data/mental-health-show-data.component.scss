@@ -1,3 +1,4 @@
+@import "../../../styles/global/colors";
 .page-container{
     width: auto;
     min-width: 100vw;
@@ -39,37 +40,37 @@
     min-width: 90px;
     min-height: 70px;
     border-radius: 200px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.858);
+    box-shadow: 5px 5px 5px $color-neutral-shadow-black;
     font-size: large;
-
+    transition: .3s;
 
     &:hover {
         transform: scale(1.02);
-        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.858);
+        box-shadow: 7px 7px 7px $color-hover-shadow-black;
     }
     &:active {
         transform: scale(1.01);
-        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.858);
-
+        box-shadow: 4px 4px 4px $color-hover-shadow-black;
 
     }
 }
 
-.graphTitleContainer {
+.graphTitle {
     position: relative;
     margin-top: 350px;
     text-align: center;
 
+    &__text {
+        justify-self: center;
+        position: static;
+    
+        display: block;
+        text-transform: uppercase;
+        font-weight: 800;
+        text-align: center;
+       
+    }
+
 
 }
 
-.graphTitle {
-    justify-self: center;
-    position: static;
-
-    display: block;
-    text-transform: uppercase;
-    font-weight: 800;
-    text-align: center;
-   
-}

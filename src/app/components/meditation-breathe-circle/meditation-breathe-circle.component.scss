@@ -1,3 +1,4 @@
+@import "../../../styles/global/colors";
 
 .big-circle-breath {
     display: flex;
@@ -10,20 +11,20 @@
     width: 30vw;
     border-radius: 50%;
     opacity: .8;
-    background: linear-gradient(to bottom, #667db6,#0082c8,#0082c8,#667db6);
+    background: linear-gradient(to bottom, $color-primary-purple-blue,$color-primary-blue,$color-primary-blue,$color-primary-purple-blue);
     animation-name: breathAnimation;
     animation-duration: 6s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     border-color: rgba(0, 0, 0, 0.413);
     border-style: solid;
+
+    &__text {
+        font-size: x-large;
+        text-transform: uppercase;
+    }
 }
 
-
-.breath-text {
-    font-size: x-large;
-    text-transform: uppercase;
-}
 
 @keyframes breathAnimation {
     0%{
