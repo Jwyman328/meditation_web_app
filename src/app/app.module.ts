@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,7 +39,11 @@ import { MeditationBreatheCircleComponent } from './components/meditation-breath
 import { GuestUserInfoComponent } from './components/guest-user-info/guest-user-info.component';
 import { SubmitEmotionButtonComponent } from './components/buttons/submit-emotion-button/submit-emotion-button.component';
 import { SetGraphTypeButtonComponent } from './components/buttons/set-graph-type-button/set-graph-type-button.component';
-import { MeditationResultsPageComponent } from './meditation-results-page/meditation-results-page.component';
+import { MeditationResultsPageComponent } from './pages/meditation-results-page/meditation-results-page.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +88,10 @@ BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
     FormsModule,
-    BeautifulChartsModule
+    BeautifulChartsModule,
+    MatCardModule,
+    MatDatepickerModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
   bootstrap: [AppComponent],

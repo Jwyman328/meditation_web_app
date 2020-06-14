@@ -10,7 +10,7 @@ import { MentalHealthComponent } from './pages/mental-health/mental-health.compo
 import { MentalHealthShowDataComponent } from './pages/mental-health-show-data/mental-health-show-data.component';
 import { PastJournalsComponent } from './pages/past-journals/past-journals.component';
 import { AuthGuard } from './services/auth-guards/user-authenticated-guard';
-import { MeditationResultsPageComponent } from './meditation-results-page/meditation-results-page.component';
+import { MeditationResultsPageComponent } from './pages/meditation-results-page/meditation-results-page.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, canActivate: [AuthGuard] }, //,
