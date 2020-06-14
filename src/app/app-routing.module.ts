@@ -10,31 +10,52 @@ import { MentalHealthComponent } from './pages/mental-health/mental-health.compo
 import { MentalHealthShowDataComponent } from './pages/mental-health-show-data/mental-health-show-data.component';
 import { PastJournalsComponent } from './pages/past-journals/past-journals.component';
 import { AuthGuard } from './services/auth-guards/user-authenticated-guard';
+import { MeditationResultsPageComponent } from './meditation-results-page/meditation-results-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent,canActivate:[AuthGuard] },//, 
+  { path: '', component: HomepageComponent, canActivate: [AuthGuard] }, //,
   { path: 'signup', component: SignUpPageComponent },
   { path: 'login', component: LoginInPageComponent },
-  { path: 'all-meditations', component: SelectMeditationCoursePageComponent,canActivate:[AuthGuard] },
+  {
+    path: 'all-meditations',
+    component: SelectMeditationCoursePageComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'individual-meditation-course/:courseId',
     component: IndividualMeditationCoursePageComponent,
-    canActivate:[AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'individual-meditation-page/:courseId/:meditationTitle',
     component: IndividualMeditationPageComponent,
-    canActivate:[AuthGuard]
+    canActivate: [AuthGuard],
   },
-  { path: 'mental-health', component: MentalHealthShowDataComponent,canActivate:[AuthGuard] },
-  { path: 'create-journal-entry', component: MentalHealthComponent ,canActivate:[AuthGuard]},
-  { path: 'past-journals', component: PastJournalsComponent,canActivate:[AuthGuard] },
-
+  {
+    path: 'mental-health',
+    component: MentalHealthShowDataComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'create-journal-entry',
+    component: MentalHealthComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'past-journals',
+    component: PastJournalsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'meditation/results',
+    component: MeditationResultsPageComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
 
-exports: [RouterModule],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

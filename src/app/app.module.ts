@@ -38,6 +38,7 @@ import { MeditationBreatheCircleComponent } from './components/meditation-breath
 import { GuestUserInfoComponent } from './components/guest-user-info/guest-user-info.component';
 import { SubmitEmotionButtonComponent } from './components/buttons/submit-emotion-button/submit-emotion-button.component';
 import { SetGraphTypeButtonComponent } from './components/buttons/set-graph-type-button/set-graph-type-button.component';
+import { MeditationResultsPageComponent } from './meditation-results-page/meditation-results-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +71,7 @@ import { SetGraphTypeButtonComponent } from './components/buttons/set-graph-type
     GuestUserInfoComponent,
     SubmitEmotionButtonComponent,
     SetGraphTypeButtonComponent,
+    MeditationResultsPageComponent,
     
     
   ],
