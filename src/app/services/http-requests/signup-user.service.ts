@@ -15,9 +15,10 @@ export class SignupUserService extends RequestSentStatus {
   postSignUpUser(signUpData: signUpDataModel) {
     this.handleRequestSent();
     return this.http.post(
-      'https://intense-gorge-29567.herokuapp.com/sign_up',
+      `http://localhost:3000/auth/sign_up`,
       signUpData,
-      { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
+      
     );
   }
 }
+//{ headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
