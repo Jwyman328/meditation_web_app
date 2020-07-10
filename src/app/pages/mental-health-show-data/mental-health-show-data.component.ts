@@ -21,7 +21,10 @@ import { MentalHealthShowDataStateService } from '../../services/componentSharin
 export class MentalHealthShowDataComponent implements OnInit {
   monthData: individualGraphDataPoint[] = [];
   weekData: individualGraphDataPoint[] = [];
-  graphData = this.monthData;
+  graphData = [{x: 0, y: 1, info: ""},
+  {x: 1, y: 2, info: ""},
+  {x: 2, y: 3, info: ""},
+  {x: 3, y: 4, info: ""} ]// this.monthData;
   currentGraph = 'month';
   today = new Date();
   
@@ -65,18 +68,40 @@ export class MentalHealthShowDataComponent implements OnInit {
     this.emotionDataService
       .getAllEmotionData(this.userAuthDataService.getToken())
       .subscribe(
-        (emotionDataResponse: emotionDataResponseModel) => {
+        (emotionDataResponse:[]) => {
           console.log(emotionDataResponse, 'dr');
-          this.monthData = createGraphDataFromRaw(
-            emotionDataResponse[0]['moods_range'][1]
-          );
+
+
           this.mentalHealthShowDataStateService.monthData.next(createGraphDataFromRaw(
-            emotionDataResponse[0]['moods_range'][1]
+            emotionDataResponse
           ))
 
+          // this.weekData = createGraphDataFromRaw(
+          //   emotionDataResponse
+          // );
+          // this.graphData = this.weekData;
+          this.emotionDataService.handleRequestSuccess();
+        },
+        (error) => {
+          console.log(error);
+          this.emotionDataService.handleRequestError();
+        }
+      );
+      // now week data 
+      this.emotionDataService
+      .getWeekEmotionData(this.userAuthDataService.getToken())
+      .subscribe(
+        (emotionDataResponse:[]) => {
+
+
           this.weekData = createGraphDataFromRaw(
-            emotionDataResponse[0]['moods_range'][0]
+            emotionDataResponse
           );
+          this.mentalHealthShowDataStateService.monthData.next(createGraphDataFromRaw(
+            emotionDataResponse
+          ))
+
+          console.log('week data', emotionDataResponse)
           this.graphData = this.weekData;
           this.emotionDataService.handleRequestSuccess();
         },
@@ -85,7 +110,6 @@ export class MentalHealthShowDataComponent implements OnInit {
           this.emotionDataService.handleRequestError();
         }
       );
-      
   }
 
   setGraphType(graphType: string) {

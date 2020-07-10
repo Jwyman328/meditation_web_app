@@ -36,7 +36,7 @@ export class SubmitEmotionButtonComponent implements OnInit {
 
     createJournalPostRequest.subscribe(
       (response) => {
-        console.log(response);
+        console.log('this is the response from the create journo', response);
         this.createJournalService.handleRequestSuccess();
         //this.journalText = '';
         this.mentalHealthComponentStateService.journalText.next('')
@@ -44,7 +44,7 @@ export class SubmitEmotionButtonComponent implements OnInit {
         this.route.navigate(['mental-health']);
       },
       (error) => {
-        console.log(error);
+        console.log('the error here in', error);
         this.createJournalService.handleRequestError();
       }
     );
