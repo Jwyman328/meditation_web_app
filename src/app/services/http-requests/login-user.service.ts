@@ -14,7 +14,7 @@ export class LoginUserService extends RequestSentStatus {
   postLoginUser(loginData:loginPostDataModel) {
     this.handleRequestSent();
     return this.http.post(
-     `http://localhost:3000/auth/login`,
+     `https://morning-sierra-84400.herokuapp.com/auth/login`,
       loginData,{headers: new HttpHeaders({ 'Content-Type': 'application/json'})}
     );
   }

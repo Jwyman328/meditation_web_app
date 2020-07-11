@@ -13,7 +13,7 @@ export class GetAllPastJournalsService extends RequestSentStatus {
   getAllPastJournals(token:string) {
     this.handleRequestSent();
     return this.http.get(
-      'http://localhost:3000/journals/past_week',
+      'https://morning-sierra-84400.herokuapp.com/journals/past_week',
       {
         headers: new HttpHeaders({
           Authorization: `JWT ${token}`,

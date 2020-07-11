@@ -17,13 +17,13 @@ export class EmotionDataService extends RequestSentStatus {
    */
   getAllEmotionData(token:string){
     this.handleRequestSent();
-    return this.http.get('http://localhost:3000/moods/past_month', //'https://intense-gorge-29567.herokuapp.com/Journal/last_week_moods/str'
+    return this.http.get('https://morning-sierra-84400.herokuapp.com/moods/past_month', //'https://intense-gorge-29567.herokuapp.com/Journal/last_week_moods/str'
     {headers: new HttpHeaders({ Authorization: `JWT ${token}`,'Content-Type': 'application/json'})})
   }
 
   getWeekEmotionData(token:string){
     this.handleRequestSent();
-    return this.http.get('http://localhost:3000/moods/past_week', //'https://intense-gorge-29567.herokuapp.com/Journal/last_week_moods/str'
+    return this.http.get('https://morning-sierra-84400.herokuapp.com/moods/past_week', //'https://intense-gorge-29567.herokuapp.com/Journal/last_week_moods/str'
     {headers: new HttpHeaders({ Authorization: `JWT ${token}`,'Content-Type': 'application/json'})})
   }
 

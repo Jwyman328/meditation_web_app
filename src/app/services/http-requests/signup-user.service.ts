@@ -15,7 +15,7 @@ export class SignupUserService extends RequestSentStatus {
   postSignUpUser(signUpData: signUpDataModel) {
     this.handleRequestSent();
     return this.http.post(
-      `http://localhost:3000/auth/sign_up`,
+      `https://morning-sierra-84400.herokuapp.com/auth/sign_up`,
       signUpData,
       
     );

@@ -13,7 +13,7 @@ export class RecordMeditationListenedService extends RequestSentStatus {
   recordMeditationListened(meditaitonListenedData:any,token: string) {
     this.handleRequestSent();
     return this.http.post(
-      'http://localhost:3000/meditation/record-session-listened',
+      'https://morning-sierra-84400.herokuapp.com/meditation/record-session-listened',
       meditaitonListenedData,{headers: new HttpHeaders({
         Authorization: `JWT ${token}`,
         'Content-Type': 'application/json',
