@@ -88,10 +88,10 @@ export class MentalHealthShowDataComponent implements OnInit {
         (emotionDataResponse: []) => {
 
           this.weekData = createGraphDataFromRaw(emotionDataResponse);
-          this.mentalHealthShowDataStateService.monthData.next(
+          this.mentalHealthShowDataStateService.weekData.next(
             createGraphDataFromRaw(emotionDataResponse)
           );
-          this.graphData = this.weekData;
+          this.mentalHealthShowDataStateService.graphData.next(this.weekData);
           this.emotionDataService.handleRequestSuccess();
         },
         (error) => {
