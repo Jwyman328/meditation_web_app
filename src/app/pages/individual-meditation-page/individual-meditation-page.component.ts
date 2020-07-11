@@ -64,7 +64,6 @@ export class IndividualMeditationPageComponent {
       );
       response.subscribe(
         (value) => {
-          console.log(value, 'value');
         },
         (error) => {
           console.log('err', error);

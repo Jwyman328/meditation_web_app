@@ -71,14 +71,13 @@ export class MentalHealthShowDataComponent implements OnInit {
       .getAllEmotionData(this.userAuthDataService.getToken())
       .subscribe(
         (emotionDataResponse: []) => {
-          console.log('past month',emotionDataResponse)
           this.mentalHealthShowDataStateService.monthData.next(
             createGraphDataFromRaw(emotionDataResponse)
           );
           this.emotionDataService.handleRequestSuccess();
         },
         (error) => {
-          console.log('past month error?',error);
+          console.log(error);
           this.emotionDataService.handleRequestError();
         }
       );
@@ -87,7 +86,6 @@ export class MentalHealthShowDataComponent implements OnInit {
       .getWeekEmotionData(this.userAuthDataService.getToken())
       .subscribe(
         (emotionDataResponse: []) => {
-          console.log('past week', emotionDataResponse)
 
           this.weekData = createGraphDataFromRaw(emotionDataResponse);
           this.mentalHealthShowDataStateService.monthData.next(

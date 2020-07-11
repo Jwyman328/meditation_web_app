@@ -34,7 +34,6 @@ export class MentalHealthShowDataStateService {
   ) {}
 
   setGraphType(graphType: string) {
-    console.log(graphType)
     this.currentGraph.next(graphType) ;
     if (graphType === 'month') {
       this.graphTitle.next(`My Emotions: ${this.dateOneMonthAgo.toLocaleDateString()}-${this.today.toLocaleDateString()}`);
