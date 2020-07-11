@@ -65,6 +65,8 @@ export class MeditationResultsPageComponent implements OnInit {
   async getData(){
     const token = await this.userAuthDataService.getToken()
     this.getMeditationsService.getMeditationListened(token).subscribe((allmeditations => {
+      this.calculateStreak(allmeditations)
+
       const backendMeditations = allmeditations.map(listenedMeditation => {
         return  {
           start: new Date(listenedMeditation.date_time_listened),
@@ -100,6 +102,27 @@ export class MeditationResultsPageComponent implements OnInit {
     const currentMonth = this.viewDate.getMonth()
     const nextMonth = currentMonth + 1
     this.viewDate = new Date(2020,nextMonth,1)
+  }
+
+  calculateStreak(currentMeditationEventsStandard){
+    let currentMeditationEvents = [...currentMeditationEventsStandard].reverse()
+
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    let meditationStreak = 0;
+    let compareToDate:any = new Date()
+    for(let meditation=0;meditation < currentMeditationEvents.length; meditation++){
+      let currentMeditationDate:any = new Date(currentMeditationEvents[meditation].date_time_listened)
+      const diffDays = Math.round(Math.abs((compareToDate - currentMeditationDate) / oneDay));
+      if (diffDays > 1){
+        break
+      }else if (currentMeditationDate.toDateString() === compareToDate.toDateString() && meditation !== 0){
+        continue
+      }else{
+          meditationStreak +=1
+           compareToDate = currentMeditationDate
+         }
+    }
+    this.currentMeditationStreak = meditationStreak;
   }
 
 }
