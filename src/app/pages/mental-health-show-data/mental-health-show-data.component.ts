@@ -21,13 +21,12 @@ import { MentalHealthShowDataStateService } from '../../services/componentSharin
 export class MentalHealthShowDataComponent implements OnInit {
   monthData: individualGraphDataPoint[] = [];
   weekData: individualGraphDataPoint[] = [];
-  graphData = [{x: 0, y: 1, info: ""},
-  {x: 1, y: 2, info: ""},
-  {x: 2, y: 3, info: ""},
-  {x: 3, y: 4, info: ""} ]// this.monthData;
+  graphData = [
+    { x: 0, y: -1, info: '' },
+  ]; // this.monthData;
   currentGraph = 'month';
   today = new Date();
-  
+
   graphWidth: number = 500;
   @ViewChild('pageContainer') pageContainer: ElementRef;
   dateOneMonthAgo: Date = new Date(
@@ -41,7 +40,7 @@ export class MentalHealthShowDataComponent implements OnInit {
   constructor(
     private emotionDataService: EmotionDataService,
     private userAuthDataService: UserAuthDataService,
-    private mentalHealthShowDataStateService:MentalHealthShowDataStateService,
+    private mentalHealthShowDataStateService: MentalHealthShowDataStateService,
     private route: Router
   ) {}
 
@@ -49,59 +48,51 @@ export class MentalHealthShowDataComponent implements OnInit {
     this.graphWidth = this.pageContainer.nativeElement.offsetWidth * 0.6;
   }
 
-
-
   ngOnInit(): void {
     //makae a request and get the data to display
-    let monthDataSubscription = this.mentalHealthShowDataStateService.monthData.subscribe((monthDataValue: individualGraphDataPoint[])=>{
-      //console.log(monthDataValue, 'mdv')
-      this.monthData = monthDataValue
-    })
-    let weekDataSubscription = this.mentalHealthShowDataStateService.weekData.subscribe((weekDataValue:individualGraphDataPoint[]) =>{
-        this.weekData = weekDataValue
-    })
+    let monthDataSubscription = this.mentalHealthShowDataStateService.monthData.subscribe(
+      (monthDataValue: individualGraphDataPoint[]) => {
+        this.monthData = monthDataValue;
+      }
+    );
+    let weekDataSubscription = this.mentalHealthShowDataStateService.weekData.subscribe(
+      (weekDataValue: individualGraphDataPoint[]) => {
+        this.weekData = weekDataValue;
+      }
+    );
 
-    let graphDataSubscription = this.mentalHealthShowDataStateService.graphData.subscribe((graphDataValue: individualGraphDataPoint[]) => {
-      this.graphData = graphDataValue
-    })
+    let graphDataSubscription = this.mentalHealthShowDataStateService.graphData.subscribe(
+      (graphDataValue: individualGraphDataPoint[]) => {
+        this.graphData = graphDataValue;
+      }
+    );
 
     this.emotionDataService
       .getAllEmotionData(this.userAuthDataService.getToken())
       .subscribe(
-        (emotionDataResponse:[]) => {
-          console.log(emotionDataResponse, 'dr');
-
-
-          this.mentalHealthShowDataStateService.monthData.next(createGraphDataFromRaw(
-            emotionDataResponse
-          ))
-
-          // this.weekData = createGraphDataFromRaw(
-          //   emotionDataResponse
-          // );
-          // this.graphData = this.weekData;
+        (emotionDataResponse: []) => {
+          console.log('past month',emotionDataResponse)
+          this.mentalHealthShowDataStateService.monthData.next(
+            createGraphDataFromRaw(emotionDataResponse)
+          );
           this.emotionDataService.handleRequestSuccess();
         },
         (error) => {
-          console.log(error);
+          console.log('past month error?',error);
           this.emotionDataService.handleRequestError();
         }
       );
-      // now week data 
-      this.emotionDataService
+    // now week data
+    this.emotionDataService
       .getWeekEmotionData(this.userAuthDataService.getToken())
       .subscribe(
-        (emotionDataResponse:[]) => {
+        (emotionDataResponse: []) => {
+          console.log('past week', emotionDataResponse)
 
-
-          this.weekData = createGraphDataFromRaw(
-            emotionDataResponse
+          this.weekData = createGraphDataFromRaw(emotionDataResponse);
+          this.mentalHealthShowDataStateService.monthData.next(
+            createGraphDataFromRaw(emotionDataResponse)
           );
-          this.mentalHealthShowDataStateService.monthData.next(createGraphDataFromRaw(
-            emotionDataResponse
-          ))
-
-          console.log('week data', emotionDataResponse)
           this.graphData = this.weekData;
           this.emotionDataService.handleRequestSuccess();
         },
@@ -113,7 +104,7 @@ export class MentalHealthShowDataComponent implements OnInit {
   }
 
   setGraphType(graphType: string) {
-    this.mentalHealthShowDataStateService.setGraphType(graphType)
+    this.mentalHealthShowDataStateService.setGraphType(graphType);
     this.currentGraph = graphType;
     if (graphType === 'month') {
       this.graphTitle = `My Emotions: ${this.dateOneMonthAgo.toLocaleDateString()}-${this.today.toLocaleDateString()}`;
@@ -123,5 +114,4 @@ export class MentalHealthShowDataComponent implements OnInit {
       this.graphData = this.weekData;
     }
   }
-
 }

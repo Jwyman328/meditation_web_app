@@ -14,7 +14,7 @@ export class CreateJournalService extends RequestSentStatus {
   createJournal = (journalData: createJournalPostModel, token: string) => {
     this.handleRequestSent();
     return this.http.post(
-      `http://localhost:3000/Journals/`,// //https://intense-gorge-29567.herokuapp.com
+      `https://morning-sierra-84400.herokuapp.com/Journals/`,//http://localhost:3000/Journals/ //https://intense-gorge-29567.herokuapp.com 
       journalData,
       {
         headers: new HttpHeaders({
