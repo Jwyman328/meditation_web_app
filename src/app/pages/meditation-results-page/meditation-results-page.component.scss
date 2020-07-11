@@ -1,7 +1,8 @@
 @import "../../../styles/global/colors";
 .meditation-results-page {
+    position: absolute;
     width:100vw;
-    height: 100vh;
+    height: 120vh;
     background: linear-gradient(to bottom, $color-primary-blue,$color-primary-blue, $color-primary-purple-blue, $color-primary-purple);
     display: grid;
     grid-template-columns: 1fr;
@@ -35,4 +36,9 @@
     min-width: 300px;
     align-self: center;
     justify-self: center;
+}
+
+.calendar__title {
+    font-size: x-large;
+    text-align: center;
 }

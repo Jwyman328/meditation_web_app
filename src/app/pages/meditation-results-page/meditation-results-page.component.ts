@@ -12,9 +12,11 @@ import { OnInit,  Component,
     isSameMonth,
     addHours,
   } from 'date-fns';
+  import { GetMeditationsService } from '../../services/http-requests/get-meditations.service';
   import { Subject } from 'rxjs';
+  import { UserAuthDataService } from '../../services/userData/user-auth-data.service';
   import {
-    CalendarEvent,
+CalendarEvent,
     CalendarEventAction,
     CalendarEventTimesChangedEvent,
     CalendarView,
@@ -31,6 +33,7 @@ export class MeditationResultsPageComponent implements OnInit {
   
   //calender
   view: CalendarView = CalendarView.Month;
+  CalendarView = CalendarView;
   viewDate: Date = new Date()
   modalData: {
     action: string;
@@ -38,8 +41,8 @@ export class MeditationResultsPageComponent implements OnInit {
   };
   events : CalendarEvent[] = [
     {
-      start: new Date(),
-      end: new Date(),
+      start: new Date(2020, 6, 17),
+      end: new Date(2020, 7, 18)  ,
       title: 'Meditation',
       color: {
         primary: '#ad2121',
@@ -53,9 +56,50 @@ export class MeditationResultsPageComponent implements OnInit {
       draggable: true,
     },]
   
-  constructor() { }
+  constructor(private getMeditationsService:GetMeditationsService,private userAuthDataService:UserAuthDataService) { }
 
   ngOnInit(): void {
+    this.getData()
+  }
+
+  async getData(){
+    const token = await this.userAuthDataService.getToken()
+    this.getMeditationsService.getMeditationListened(token).subscribe((allmeditations => {
+      const backendMeditations = allmeditations.map(listenedMeditation => {
+        return  {
+          start: new Date(listenedMeditation.date_time_listened),
+          end: new Date(listenedMeditation.date_time_listened) ,
+          title: listenedMeditation.meditation_name,
+          color: {
+            primary: '#ad2121',
+            secondary: '#FAE3E3',
+          },
+          allDay: true,
+          resizable: {
+            beforeStart: true,
+            afterEnd: true,
+          },
+          draggable: true,
+        }
+      })
+      this.events = backendMeditations
+    }))
+  }
+
+  setView(view: CalendarView) {
+    this.view = view;
+  }
+
+  previousMonth(){
+    const currentMonth = this.viewDate.getMonth()
+    const pastMonth = currentMonth-1
+    this.viewDate = new Date(2020,pastMonth,1)
+  }
+  nextMonth(){
+
+    const currentMonth = this.viewDate.getMonth()
+    const nextMonth = currentMonth + 1
+    this.viewDate = new Date(2020,nextMonth,1)
   }
 
 }
