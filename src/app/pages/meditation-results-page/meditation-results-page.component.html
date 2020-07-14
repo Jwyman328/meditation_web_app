@@ -13,8 +13,8 @@
 
   <div class="test" [ngSwitch]="view">
     <div>
-        <button (click)="previousMonth()">previous month</button>
-        <button (click)="nextMonth()">next month</button>
+        <button class='moveMothButton' (click)="previousMonth()">previous month</button>
+        <button class='moveMothButton' (click)="nextMonth()">next month</button>
         <h3 class="calendar__title">
       {{ viewDate | calendarDate: view + "ViewTitle":"en" }}
     </h3>
