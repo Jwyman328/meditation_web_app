@@ -14,7 +14,7 @@ export class GetMeditationsService  extends RequestSentStatus {
   getMeditationListened(token: string):any {
     this.handleRequestSent();
     return this.http.get(
-      'https://morning-sierra-84400.herokuapp.com/meditation/',{
+      'https://morning-sierra-84400.herokuapp.com/meditation-sessions/',{
         headers: new HttpHeaders({
           Authorization: `JWT ${token}`,
           'Content-Type': 'application/json',
