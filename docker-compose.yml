@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: meditation_app
+    image: meditation_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 4200:4200
+    stdin_open: true

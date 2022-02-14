@@ -52,4 +52,11 @@ Monthly Moods              |
   <li>PostgresSQL</li>
  </ul>
  
+ <h3>How to start the app with dockerfile</h3>
+ <p>$  docker build -t meditation_fe . </p>
+ <p>$  docker run -p 4200:4200 meditation_fe </p>
+
+ <h3>How to start the app with docker-compose</h3>
+ <p>$ docker-compose build </p>
+ <p>$ docker-compose up   </p>
 
